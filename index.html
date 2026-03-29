@@ -1,1 +1,734 @@
-<!DOCTYPE html>...
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hall Labs LLC — Software Engineering & Mobile Apps</title>
+  <meta name="description" content="Hall Labs LLC offers expert backend engineering consulting and builds Wear OS and Android apps for outdoor athletes.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --color-bg: #ffffff;
+      --color-bg-alt: #f7f8fa;
+      --color-text: #1a1a2e;
+      --color-text-secondary: #555770;
+      --color-accent: #2c5cc5;
+      --color-accent-light: #e8eef9;
+      --color-border: #e2e4e9;
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      color: var(--color-text);
+      background: var(--color-bg);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Navigation ── */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--color-border);
+      z-index: 100;
+    }
+
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+
+    .nav-logo {
+      font-size: 1.125rem;
+      font-weight: 700;
+      color: var(--color-text);
+      text-decoration: none;
+      letter-spacing: -0.02em;
+    }
+
+    .nav-logo span {
+      color: var(--color-accent);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--color-text-secondary);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--color-accent);
+    }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem;
+    }
+
+    .nav-toggle span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--color-text);
+      margin: 5px 0;
+      transition: 0.2s;
+    }
+
+    /* ── Sections ── */
+    section {
+      padding: 6rem 2rem;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--color-accent);
+      margin-bottom: 1rem;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    .section-subtitle {
+      font-size: 1.125rem;
+      color: var(--color-text-secondary);
+      max-width: 600px;
+      line-height: 1.7;
+    }
+
+    /* ── Hero ── */
+    .hero {
+      padding: 10rem 2rem 6rem;
+      background: var(--color-bg);
+    }
+
+    .hero-content {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.5rem, 5vw, 3.75rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero p {
+      font-size: 1.25rem;
+      color: var(--color-text-secondary);
+      max-width: 580px;
+      line-height: 1.7;
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.875rem 2rem;
+      background: var(--color-accent);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9375rem;
+      border-radius: 8px;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .hero-cta:hover {
+      background: #234fad;
+      transform: translateY(-1px);
+    }
+
+    .hero-cta svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    /* ── Services ── */
+    .services {
+      background: var(--color-bg-alt);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .service-card {
+      background: var(--color-bg);
+      border: 1px solid var(--color-border);
+      border-radius: 12px;
+      padding: 2.5rem;
+      transition: box-shadow 0.2s, transform 0.15s;
+    }
+
+    .service-card:hover {
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+      transform: translateY(-2px);
+    }
+
+    .service-icon {
+      width: 48px;
+      height: 48px;
+      background: var(--color-accent-light);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .service-icon svg {
+      width: 24px;
+      height: 24px;
+      color: var(--color-accent);
+    }
+
+    .service-card h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.01em;
+    }
+
+    .service-card p {
+      color: var(--color-text-secondary);
+      font-size: 0.9375rem;
+      line-height: 1.7;
+    }
+
+    .service-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1.25rem;
+    }
+
+    .service-tags span {
+      font-size: 0.75rem;
+      font-weight: 500;
+      padding: 0.375rem 0.75rem;
+      background: var(--color-bg-alt);
+      border-radius: 6px;
+      color: var(--color-text-secondary);
+    }
+
+    /* ── Consulting Detail ── */
+    .consulting {
+      background: var(--color-bg);
+    }
+
+    .consulting-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+      margin-top: 3rem;
+    }
+
+    .consulting-text p {
+      color: var(--color-text-secondary);
+      font-size: 0.9375rem;
+      line-height: 1.8;
+      margin-bottom: 1.25rem;
+    }
+
+    .capability-list {
+      list-style: none;
+    }
+
+    .capability-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      padding: 0.875rem 0;
+      border-bottom: 1px solid var(--color-border);
+      font-size: 0.9375rem;
+    }
+
+    .capability-list li:last-child {
+      border-bottom: none;
+    }
+
+    .capability-list svg {
+      width: 20px;
+      height: 20px;
+      color: var(--color-accent);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .capability-list strong {
+      font-weight: 600;
+    }
+
+    /* ── Riser App ── */
+    .riser {
+      background: var(--color-bg-alt);
+    }
+
+    .riser-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      margin-top: 3rem;
+    }
+
+    .riser-text p {
+      color: var(--color-text-secondary);
+      font-size: 0.9375rem;
+      line-height: 1.8;
+      margin-bottom: 1.25rem;
+    }
+
+    .riser-features {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .riser-feature {
+      padding: 1.25rem;
+      background: var(--color-bg);
+      border: 1px solid var(--color-border);
+      border-radius: 8px;
+    }
+
+    .riser-feature h4 {
+      font-size: 0.875rem;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+
+    .riser-feature p {
+      font-size: 0.8125rem;
+      color: var(--color-text-secondary);
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    .riser-mockup {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .watch-frame {
+      width: 260px;
+      height: 260px;
+      background: var(--color-text);
+      border-radius: 50%;
+      padding: 16px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+      position: relative;
+    }
+
+    .watch-frame::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: -10px;
+      transform: translateY(-50%);
+      width: 6px;
+      height: 32px;
+      background: #2a2a3e;
+      border-radius: 0 3px 3px 0;
+    }
+
+    .watch-screen {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      overflow: hidden;
+    }
+
+    .watch-screen .app-name {
+      font-size: 0.625rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      opacity: 0.5;
+      margin-bottom: 0.25rem;
+    }
+
+    .watch-screen .vario-value {
+      font-size: 3rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1;
+      color: #4ade80;
+    }
+
+    .watch-screen .vario-unit {
+      font-size: 0.75rem;
+      font-weight: 500;
+      opacity: 0.4;
+      margin-top: 0.125rem;
+    }
+
+    .watch-screen .watch-stats {
+      display: flex;
+      gap: 1.25rem;
+      margin-top: 1rem;
+      font-size: 0.5625rem;
+      opacity: 0.5;
+    }
+
+    .watch-screen .watch-stat {
+      text-align: center;
+    }
+
+    .watch-screen .watch-stat-value {
+      font-weight: 700;
+      font-size: 0.6875rem;
+      opacity: 1;
+      display: block;
+    }
+
+    /* ── Contact ── */
+    .contact {
+      background: var(--color-bg);
+      text-align: center;
+    }
+
+    .contact .section-subtitle {
+      margin: 0 auto 2.5rem;
+    }
+
+    .contact-email {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 1rem 2rem;
+      background: var(--color-bg-alt);
+      border: 1px solid var(--color-border);
+      border-radius: 10px;
+      text-decoration: none;
+      color: var(--color-text);
+      font-weight: 600;
+      font-size: 1.125rem;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .contact-email:hover {
+      border-color: var(--color-accent);
+      box-shadow: 0 4px 16px rgba(44, 92, 197, 0.1);
+    }
+
+    .contact-email svg {
+      width: 20px;
+      height: 20px;
+      color: var(--color-accent);
+    }
+
+    /* ── Footer ── */
+    footer {
+      padding: 2rem;
+      border-top: 1px solid var(--color-border);
+      text-align: center;
+      font-size: 0.8125rem;
+      color: var(--color-text-secondary);
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 64px;
+        left: 0;
+        right: 0;
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(12px);
+        flex-direction: column;
+        padding: 1.5rem 2rem;
+        gap: 1.25rem;
+        border-bottom: 1px solid var(--color-border);
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-toggle {
+        display: block;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .consulting-content,
+      .riser-content {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+
+      .riser-mockup {
+        order: -1;
+      }
+
+      .watch-frame {
+        width: 220px;
+        height: 220px;
+      }
+
+      .watch-screen .vario-value {
+        font-size: 2.5rem;
+      }
+
+      section {
+        padding: 4rem 1.5rem;
+      }
+
+      .hero {
+        padding: 8rem 1.5rem 4rem;
+      }
+
+      .section-title {
+        font-size: 1.75rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">Hall Labs <span>LLC</span></a>
+      <button class="nav-toggle" aria-label="Toggle navigation" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#consulting">Consulting</a></li>
+        <li><a href="#riser">Riser</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Engineering expertise.<br>Delivered.</h1>
+      <p>Hall Labs is a software engineering consultancy and app studio. We bring 15+ years of backend and systems experience to consulting engagements, and build purpose-driven mobile apps on Google's platforms.</p>
+      <a href="#contact" class="hero-cta">
+        Get in touch
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" /></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="services" id="services">
+    <div class="container">
+      <p class="section-label">What We Do</p>
+      <h2 class="section-title">Two areas of focus</h2>
+      <p class="section-subtitle">Senior-level engineering consulting for complex backend problems, and consumer mobile apps built for Wear OS and Android.</p>
+
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5" /></svg>
+          </div>
+          <h3>Software Consulting</h3>
+          <p>Backend engineering and architecture consulting with 15+ years of experience across APIs, microservices, and distributed systems. Available for select engagements on a contract basis.</p>
+          <div class="service-tags">
+            <span>Backend Systems</span>
+            <span>Architecture</span>
+            <span>APIs</span>
+            <span>Technical Analysis</span>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 0 0 6 3.75v16.5a2.25 2.25 0 0 0 2.25 2.25h7.5A2.25 2.25 0 0 0 18 20.25V3.75a2.25 2.25 0 0 0-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" /></svg>
+          </div>
+          <h3>Mobile Apps</h3>
+          <p>Wear OS and Android applications built for niche communities. We focus on tools for outdoor athletes and pilots — starting with Riser, our variometer for paragliders.</p>
+          <div class="service-tags">
+            <span>Wear OS</span>
+            <span>Android</span>
+            <span>Kotlin</span>
+            <span>Google Play</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Consulting Detail -->
+  <section class="consulting" id="consulting">
+    <div class="container">
+      <p class="section-label">Consulting</p>
+      <h2 class="section-title">15+ years of backend engineering</h2>
+      <p class="section-subtitle">From greenfield builds to scaling existing systems, we bring deep hands-on experience to every engagement.</p>
+
+      <div class="consulting-content">
+        <div class="consulting-text">
+          <p>Hall Labs provides senior-level backend engineering consulting. We've spent over a decade and a half building APIs, microservices, and production systems across the full product lifecycle — from first commit to scaling to dedicated teams.</p>
+          <p>We work best on hard problems: greenfield product builds, architecture redesigns, system migrations, and technical analysis. We're comfortable working autonomously, leading small teams, or embedding as a senior contributor on an existing team.</p>
+        </div>
+        <ul class="capability-list">
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+            <div><strong>Backend Architecture</strong> — API design, microservices, event-driven systems, and infrastructure planning</div>
+          </li>
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+            <div><strong>Greenfield Development</strong> — Solo builds from zero to production, designed to scale into full team ownership</div>
+          </li>
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+            <div><strong>Technical Analysis</strong> — Codebase review, architecture assessment, and deep-dive investigation</div>
+          </li>
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+            <div><strong>AI Integration</strong> — OpenAI APIs, MCP protocol, and building AI-powered product features</div>
+          </li>
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /></svg>
+            <div><strong>Full Stack</strong> — Node.js, Ruby on Rails, Python, TypeScript, GraphQL, PostgreSQL, AWS, Kubernetes</div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Riser App -->
+  <section class="riser" id="riser">
+    <div class="container">
+      <p class="section-label">Apps</p>
+      <h2 class="section-title">Riser</h2>
+      <p class="section-subtitle">A variometer for paraglider pilots. Real-time lift and sink data on your Pixel Watch — no extra hardware needed.</p>
+
+      <div class="riser-content">
+        <div class="riser-text">
+          <p>Riser turns your Wear OS watch into a precision variometer. It uses the built-in barometric sensor to deliver Kalman-filtered vertical speed with sub-second response times, plus audio and haptic feedback so you can keep your eyes on the sky.</p>
+          <p>The companion Android app automatically syncs your flights from the watch and lets you export FAI-standard IGC files for sharing, analysis, or competition logging.</p>
+
+          <div class="riser-features">
+            <div class="riser-feature">
+              <h4>Wear OS First</h4>
+              <p>Built for Pixel Watch with companion phone app for flight sync</p>
+            </div>
+            <div class="riser-feature">
+              <h4>Audio & Haptic Vario</h4>
+              <p>8 sound profiles and 4 vibration patterns — works in DND mode</p>
+            </div>
+            <div class="riser-feature">
+              <h4>Smart Detection</h4>
+              <p>Auto-detects takeoff and landing with always-on barometer monitoring</p>
+            </div>
+            <div class="riser-feature">
+              <h4>IGC Export</h4>
+              <p>FAI-standard flight logs with GPS track, pressure altitude, and security hash</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="riser-mockup">
+          <div class="watch-frame">
+            <div class="watch-screen">
+              <div class="app-name">Riser</div>
+              <div class="vario-value">+2.4</div>
+              <div class="vario-unit">m/s</div>
+              <div class="watch-stats">
+                <div class="watch-stat">
+                  <span class="watch-stat-value">1,240m</span>
+                  ALT
+                </div>
+                <div class="watch-stat">
+                  <span class="watch-stat-value">24km/h</span>
+                  GND
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <p class="section-label">Contact</p>
+      <h2 class="section-title">Let's talk</h2>
+      <p class="section-subtitle">Interested in a consulting engagement or want to learn more about Riser? Reach out.</p>
+
+      <a href="mailto:info@halllabs.co" class="contact-email">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" /></svg>
+        info@halllabs.co
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 Hall Labs LLC. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

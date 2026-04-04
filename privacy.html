@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — Riser by Hall Labs</title>
+  <meta name="description" content="Privacy policy for the Riser paragliding variometer app for Wear OS and Android.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --color-bg: #ffffff;
+      --color-bg-alt: #f7f8fa;
+      --color-text: #1a1a2e;
+      --color-text-secondary: #555770;
+      --color-accent: #2c5cc5;
+      --color-accent-light: #e8eef9;
+      --color-border: #e2e4e9;
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      color: var(--color-text);
+      background: var(--color-bg);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Navigation ── */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--color-border);
+      z-index: 100;
+    }
+
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+
+    .nav-logo {
+      font-size: 1.125rem;
+      font-weight: 700;
+      color: var(--color-text);
+      text-decoration: none;
+      letter-spacing: -0.02em;
+    }
+
+    .nav-logo span {
+      color: var(--color-accent);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--color-text-secondary);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--color-accent);
+    }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem;
+    }
+
+    .nav-toggle span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--color-text);
+      margin: 5px 0;
+      transition: 0.2s;
+    }
+
+    /* ── Content ── */
+    .policy {
+      padding: 8rem 2rem 4rem;
+      max-width: 780px;
+      margin: 0 auto;
+    }
+
+    .policy h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+      line-height: 1.2;
+    }
+
+    .policy .effective-date {
+      font-size: 0.875rem;
+      color: var(--color-text-secondary);
+      margin-bottom: 2.5rem;
+    }
+
+    .policy h2 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-top: 2.5rem;
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.01em;
+    }
+
+    .policy p {
+      color: var(--color-text-secondary);
+      font-size: 0.9375rem;
+      line-height: 1.8;
+      margin-bottom: 1rem;
+    }
+
+    .policy ul {
+      color: var(--color-text-secondary);
+      font-size: 0.9375rem;
+      line-height: 1.8;
+      margin-bottom: 1rem;
+      margin-left: 1.5rem;
+    }
+
+    .policy li {
+      margin-bottom: 0.375rem;
+    }
+
+    .policy a {
+      color: var(--color-accent);
+      text-decoration: none;
+    }
+
+    .policy a:hover {
+      text-decoration: underline;
+    }
+
+    .policy .summary-box {
+      background: var(--color-accent-light);
+      border-radius: 10px;
+      padding: 1.5rem 2rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .policy .summary-box p {
+      color: var(--color-text);
+      font-weight: 500;
+      margin: 0;
+    }
+
+    /* ── Footer ── */
+    footer {
+      padding: 2rem;
+      border-top: 1px solid var(--color-border);
+      text-align: center;
+      font-size: 0.8125rem;
+      color: var(--color-text-secondary);
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 64px;
+        left: 0;
+        right: 0;
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(12px);
+        flex-direction: column;
+        padding: 1.5rem 2rem;
+        gap: 1.25rem;
+        border-bottom: 1px solid var(--color-border);
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-toggle {
+        display: block;
+      }
+
+      .policy {
+        padding: 7rem 1.5rem 3rem;
+      }
+
+      .policy h1 {
+        font-size: 1.75rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">Hall Labs <span>LLC</span></a>
+      <button class="nav-toggle" aria-label="Toggle navigation" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="/#services">Services</a></li>
+        <li><a href="/#consulting">Consulting</a></li>
+        <li><a href="/#riser">Riser</a></li>
+        <li><a href="/#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Privacy Policy -->
+  <div class="policy">
+    <h1>Privacy Policy</h1>
+    <p class="effective-date">Effective date: April 4, 2026</p>
+
+    <div class="summary-box">
+      <p>Riser does not collect, transmit, or share your personal data with anyone. All data stays on your devices.</p>
+    </div>
+
+    <p>This privacy policy describes how Hall Labs LLC ("we", "us", or "our") handles information in the Riser paragliding variometer app for Wear OS and its companion Android app (together, the "App"). We are committed to protecting your privacy and being transparent about our practices.</p>
+
+    <h2>Information the App Accesses</h2>
+    <p>To function as a variometer and flight recorder, the App accesses the following data from your device's sensors while you are using it:</p>
+    <ul>
+      <li><strong>GPS location</strong> — latitude, longitude, altitude, speed, and bearing, used to calculate vertical speed, track your flight path, and record GPS fixes for IGC export.</li>
+      <li><strong>Barometric pressure</strong> — used to calculate pressure altitude and detect takeoff and landing.</li>
+      <li><strong>Activity recognition</strong> — used by the Wear OS Health Services API to enable physical button control during flight.</li>
+      <li><strong>Battery status</strong> — used to display battery level and activate power-saving GPS intervals.</li>
+    </ul>
+
+    <h2>Information You Provide</h2>
+    <p>The App allows you to optionally enter:</p>
+    <ul>
+      <li>Pilot name</li>
+      <li>Glider type and registration</li>
+      <li>Feedback and unit preferences</li>
+    </ul>
+    <p>This information is stored locally on your device and included in IGC flight files that you choose to export. You can change or remove it at any time in Settings.</p>
+
+    <h2>How Data Is Stored</h2>
+    <p>All data is stored locally on your device:</p>
+    <ul>
+      <li>Flight tracks and statistics are saved in a local database on the watch.</li>
+      <li>Settings and preferences are saved in encrypted local storage on the watch.</li>
+      <li>IGC flight files are saved to local storage on the phone after sync.</li>
+    </ul>
+    <p>No data is stored on our servers. We do not operate servers or cloud services for the App.</p>
+
+    <h2>Data Sharing and Transmission</h2>
+    <p><strong>We do not collect, transmit, or share your data.</strong></p>
+    <ul>
+      <li>The Wear OS watch app has no internet permission and cannot send data to the internet.</li>
+      <li>Flight data syncs from your watch to your paired phone over Bluetooth via the Wear OS Data Layer. This is a direct, encrypted connection between your own devices and does not pass through any external server.</li>
+      <li>You may choose to share IGC flight files from the phone app using Android's share function (e.g., email, cloud storage). This is entirely your choice — the App never uploads data automatically.</li>
+    </ul>
+
+    <h2>Third-Party Services</h2>
+    <p>The App does not include any third-party analytics, advertising, crash reporting, or tracking services. Specifically:</p>
+    <ul>
+      <li>No analytics SDKs (e.g., Google Analytics, Firebase Analytics)</li>
+      <li>No crash reporting services (e.g., Crashlytics, Sentry)</li>
+      <li>No advertising networks</li>
+      <li>No third-party SDKs that collect or transmit user data</li>
+    </ul>
+    <p>The App uses Google Play Services solely for on-device functionality: location services (GPS), Health Services (button control), and the Wear Data Layer (local watch-to-phone sync).</p>
+
+    <h2>Background Location Access</h2>
+    <p>The App requests background location permission to enable two features:</p>
+    <ul>
+      <li><strong>Active flight tracking</strong> — GPS recording continues when the watch screen turns off during flight, so your track is not interrupted.</li>
+      <li><strong>Automatic flight detection</strong> — if enabled in Settings, the App monitors barometric pressure in the background to detect takeoff. GPS is only activated briefly to confirm flight conditions and is not recorded until you start a flight session.</li>
+    </ul>
+    <p>Background location data is processed entirely on your device and is never transmitted externally.</p>
+
+    <h2>Data Retention and Deletion</h2>
+    <p>You are in full control of your data:</p>
+    <ul>
+      <li>Flight records can be deleted individually from the flight history screen on both the watch and phone apps.</li>
+      <li>All app data (flights, settings, preferences) is removed when you uninstall the App.</li>
+      <li>Since no data is stored on our servers, there is no remote data to delete.</li>
+    </ul>
+
+    <h2>Children's Privacy</h2>
+    <p>The App is not directed at children under 13. We do not knowingly collect personal information from children. The App is designed for paraglider pilots engaging in an adult sporting activity.</p>
+
+    <h2>Changes to This Policy</h2>
+    <p>If we update this privacy policy, we will post the revised version on this page with a new effective date. We encourage you to review this page periodically.</p>
+
+    <h2>Contact Us</h2>
+    <p>If you have any questions about this privacy policy or the App's data practices, please contact us at:</p>
+    <p><a href="mailto:info@halllabs.co">info@halllabs.co</a></p>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 Hall Labs LLC. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

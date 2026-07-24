@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Guide — Riser by Hall Labs</title>
+  <meta name="description" content="Complete user guide for Riser, the paragliding variometer app for Wear OS. Learn about auto-detect, live tracking, companion app, and BLE vario support.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --color-bg: #ffffff;
+      --color-bg-alt: #f7f8fa;
+      --color-text: #1a1a2e;
+      --color-text-secondary: #555770;
+      --color-accent: #2c5cc5;
+      --color-accent-light: #e8eef9;
+      --color-border: #e2e4e9;
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-sans);
+      color: var(--color-text);
+      background: var(--color-bg);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    nav {
+      position: fixed; top: 0; left: 0; right: 0;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--color-border);
+      z-index: 100; height: 64px;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 2rem;
+    }
+    .nav-logo { font-weight: 700; font-size: 1.125rem; color: var(--color-text); text-decoration: none; }
+    .nav-logo span { color: var(--color-accent); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { color: var(--color-text-secondary); text-decoration: none; font-size: 0.875rem; font-weight: 500; }
+    .nav-links a:hover { color: var(--color-accent); }
+
+    .guide { max-width: 780px; margin: 0 auto; padding: 100px 1.5rem 3rem; }
+    .guide h1 { font-size: 2rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .guide .subtitle { font-size: 1.125rem; color: var(--color-text-secondary); margin-bottom: 2rem; }
+    .guide h2 { font-size: 1.5rem; font-weight: 700; margin-top: 3rem; margin-bottom: 1rem; color: var(--color-text); }
+    .guide h3 { font-size: 1.125rem; font-weight: 600; margin-top: 2rem; margin-bottom: 0.75rem; }
+    .guide p { margin-bottom: 1rem; color: var(--color-text-secondary); }
+    .guide ol, .guide ul { margin-bottom: 1rem; padding-left: 1.5rem; color: var(--color-text-secondary); }
+    .guide li { margin-bottom: 0.5rem; }
+    .guide strong { color: var(--color-text); }
+
+    .tip-box {
+      background: var(--color-accent-light);
+      border-left: 4px solid var(--color-accent);
+      padding: 1rem 1.25rem;
+      border-radius: 0 8px 8px 0;
+      margin: 1.5rem 0;
+      font-size: 0.9375rem;
+    }
+    .tip-box strong { color: var(--color-accent); }
+
+    .feature-section {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+      margin: 2rem 0;
+    }
+    .feature-section.reverse { flex-direction: row-reverse; }
+    .feature-text { flex: 1; }
+    .feature-mockup { flex-shrink: 0; }
+
+    /* Watch mockup */
+    .watch-frame {
+      width: 200px; height: 200px;
+      background: var(--color-text);
+      border-radius: 50%;
+      padding: 12px;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+      position: relative;
+    }
+    .watch-frame::after {
+      content: ''; position: absolute;
+      top: 50%; right: -8px; transform: translateY(-50%);
+      width: 5px; height: 26px;
+      background: #2a2a3e; border-radius: 0 3px 3px 0;
+    }
+    .watch-screen {
+      width: 100%; height: 100%;
+      background: #000; border-radius: 50%;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      color: #fff; overflow: hidden;
+      padding: 14%;
+      gap: 0.2rem;
+      position: relative;
+    }
+    .watch-screen .watch-time {
+      font-size: 0.625rem; font-weight: 700;
+      color: rgba(255,255,255,0.5);
+      position: absolute; top: 8%; left: 0; right: 0;
+      text-align: center; letter-spacing: 0.05em;
+    }
+    .watch-screen .watch-row {
+      display: flex; align-items: baseline; gap: 0.2rem;
+      width: 100%;
+    }
+    .watch-screen .value { font-weight: 500; letter-spacing: -0.04em; line-height: 1.15; }
+    .watch-screen .unit { font-size: 0.625rem; color: rgba(255,255,255,0.7); }
+    .watch-screen .cyan { color: #4fc3f7; }
+    .watch-screen .green { color: #66bb6a; }
+    .watch-screen .dim { color: rgba(255,255,255,0.5); }
+
+    /* Complication mockup */
+    .complication-demo {
+      display: flex; gap: 1.5rem; align-items: center;
+      margin: 1.5rem 0;
+    }
+    .comp-state {
+      text-align: center;
+    }
+    .comp-circle {
+      width: 64px; height: 64px;
+      border-radius: 50%;
+      border: 3px solid;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 0.5rem;
+      font-size: 1.5rem;
+    }
+    .comp-circle.armed { border-color: #e88585; background: rgba(232,133,133,0.1); color: #e88585; }
+    .comp-circle.disarmed { border-color: #555; background: transparent; color: #888; }
+    .comp-label { font-size: 0.8125rem; color: var(--color-text-secondary); font-weight: 500; }
+    .comp-arrow { font-size: 1.5rem; color: var(--color-text-secondary); }
+
+    /* Settings mockup */
+    .settings-mockup {
+      background: #000;
+      border-radius: 16px;
+      padding: 1rem;
+      max-width: 220px;
+      color: #fff;
+      font-size: 0.75rem;
+    }
+    .settings-mockup .setting-row {
+      background: rgba(255,255,255,0.08);
+      border-radius: 12px;
+      padding: 0.5rem 0.75rem;
+      margin-bottom: 0.4rem;
+    }
+    .settings-mockup .setting-label { color: rgba(255,255,255,0.5); font-size: 0.625rem; }
+    .settings-mockup .setting-value { color: #fff; font-weight: 500; }
+    .settings-mockup .section-head { color: rgba(255,255,255,0.4); font-size: 0.625rem; font-weight: 500; margin: 0.75rem 0 0.25rem; }
+
+    footer {
+      text-align: center; padding: 2rem;
+      border-top: 1px solid var(--color-border);
+      font-size: 0.8125rem; color: var(--color-text-secondary);
+    }
+    footer a { color: var(--color-text-secondary); text-decoration: none; }
+    footer a:hover { color: var(--color-accent); }
+
+    @media (max-width: 768px) {
+      .feature-section, .feature-section.reverse { flex-direction: column; }
+      .watch-frame { width: 160px; height: 160px; padding: 10px; }
+      .complication-demo { flex-direction: column; gap: 1rem; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">Hall Labs <span>LLC</span></a>
+  <ul class="nav-links">
+    <li><a href="/">Home</a></li>
+    <li><a href="/#riser">Riser</a></li>
+    <li><a href="/privacy.html">Privacy</a></li>
+  </ul>
+</nav>
+
+<div class="guide">
+
+  <h1>Riser User Guide</h1>
+  <p class="subtitle">Paragliding variometer for Wear OS — complete guide to all features</p>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <h2>Getting Started</h2>
+
+  <p>Riser turns your Wear OS watch into a paragliding variometer with audio and haptic feedback. Install from the Google Play Store on both your watch and phone.</p>
+
+  <h3>First Launch</h3>
+  <ol>
+    <li>Open Riser on your watch</li>
+    <li>Grant location permissions when prompted</li>
+    <li>Go to <strong>Settings</strong> and set your pilot name, glider type, and preferred units</li>
+    <li>Set <strong>Feedback Mode</strong> to "Audio + Haptic" for full vario feedback</li>
+  </ol>
+
+  <div class="tip-box">
+    <strong>Tip:</strong> Make sure your watch's ring and notification volume is turned up. Riser uses the alarm audio channel to ensure vario beeps are audible even in wind.
+  </div>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <h2>Flying with Riser</h2>
+
+  <h3>Manual Flight Start</h3>
+  <div class="feature-section">
+    <div class="feature-text">
+      <p>From the home screen, tap <strong>"Let's Fly!"</strong> to start tracking. Riser will:</p>
+      <ul>
+        <li>Connect to GPS and display connection status</li>
+        <li>Calibrate the barometer against GPS altitude</li>
+        <li>Begin audio/haptic vario feedback</li>
+        <li>Record your flight track as an IGC file</li>
+      </ul>
+    </div>
+    <div class="feature-mockup">
+      <div class="watch-frame">
+        <div class="watch-screen">
+          <span class="watch-time">3:14 PM</span>
+          <div class="watch-row"><span class="value cyan" style="font-size:1.4rem">1,240</span><span class="unit">ft</span></div>
+          <div class="watch-row"><span class="value" style="font-size:1.7rem">+2.4</span><span class="unit">m/s</span></div>
+          <div class="watch-row"><span class="value" style="font-size:1.1rem">24</span><span class="unit">km/h</span></div>
+          <div class="watch-row"><span class="value dim" style="font-size:0.9rem">L/D 8.2</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h3>In-Flight Screens</h3>
+  <p>Swipe up/down to switch between two screens:</p>
+  <ul>
+    <li><strong>Thermal Screen</strong> — Altitude, vertical speed (vario), ground speed, glide ratio. Your primary screen while thermalling.</li>
+    <li><strong>Glide/Nav Screen</strong> — Distance, max altitude, elapsed time, battery level. Check during glides between thermals.</li>
+  </ul>
+
+  <h3>Stopping a Flight</h3>
+  <p>Long-press the screen to access controls, then tap <strong>Stop</strong>. Your flight is automatically saved and synced to the companion phone app.</p>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <h2>Auto-Detect with the Complication</h2>
+
+  <p>Riser can automatically detect when you're flying and start tracking — no need to open the app. This is controlled by a <strong>watch face complication</strong>.</p>
+
+  <h3>Setting Up the Complication</h3>
+  <ol>
+    <li>Long-press your watch face → tap <strong>Customize</strong></li>
+    <li>Tap any complication slot</li>
+    <li>Scroll to find <strong>Riser — Flight Detect</strong></li>
+    <li>Select it — you'll see a paraglider icon with a circular ring</li>
+  </ol>
+
+  <h3>Arming & Disarming</h3>
+  <div class="complication-demo">
+    <div class="comp-state">
+      <div class="comp-circle disarmed">🪂</div>
+      <span class="comp-label">Disarmed</span>
+    </div>
+    <span class="comp-arrow">→ tap →</span>
+    <div class="comp-state">
+      <div class="comp-circle armed">🪂</div>
+      <span class="comp-label">Armed</span>
+    </div>
+  </div>
+  <ul>
+    <li><strong>Disarmed</strong> (empty ring) — detection is off</li>
+    <li><strong>Armed</strong> (filled ring) — detection is active for 2 hours with full GPS</li>
+    <li>Tap once to toggle between armed and disarmed</li>
+    <li>Two quick vibrations confirm arming, one short vibration confirms disarming</li>
+  </ul>
+
+  <div class="tip-box">
+    <strong>Pre-flight routine:</strong> Tap the complication before heading to launch. Detection monitors barometer + GPS for flight signatures. When it detects you're flying, your watch vibrates and a notification pops up — tap once to start tracking.
+  </div>
+
+  <h3>How Detection Works</h3>
+  <p>Riser uses multiple signals to detect flight:</p>
+  <ul>
+    <li><strong>Thermal detection</strong> — Sustained altitude gain with high climb rate variance (circling in thermals)</li>
+    <li><strong>Ridge detection</strong> — Sustained speed with frequent bearing changes (ridge soaring back and forth)</li>
+    <li><strong>Elevation confirmation</strong> — Google Elevation API confirms you're above ground level, filtering out driving on hills</li>
+  </ul>
+  <p>Landing is also detected automatically — when your speed drops below walking pace for 90 seconds, you'll be prompted to stop the flight.</p>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <h2>Live Tracking</h2>
+
+  <p>Share your position in real-time so friends and retrieve crew can watch your flight live.</p>
+
+  <h3>LiveTrack24</h3>
+  <div class="feature-section reverse">
+    <div class="feature-text">
+      <ol>
+        <li>Create a free account at <a href="https://www.livetrack24.com/register" style="color: var(--color-accent)">livetrack24.com</a></li>
+        <li>In Riser Settings → Live Tracking → enable <strong>LiveTrack24</strong></li>
+        <li>Enter your username and password</li>
+        <li>During flight, your position is sent every 5 seconds</li>
+      </ol>
+      <p>Friends can watch your flight at livetrack24.com in real-time.</p>
+    </div>
+    <div class="feature-mockup">
+      <div class="settings-mockup">
+        <div class="section-head">LIVE TRACKING</div>
+        <div class="setting-row">
+          <span class="setting-value">LiveTrack24 ✓</span>
+        </div>
+        <div class="setting-row">
+          <span class="setting-label">LT24 Username</span>
+          <span class="setting-value">pilotjohn</span>
+        </div>
+        <div class="setting-row">
+          <span class="setting-label">LT24 Password</span>
+          <span class="setting-value">********</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h3>SportsTrackLive</h3>
+  <p>Riser also supports <a href="https://www.sportstracklive.com" style="color: var(--color-accent)">SportsTrackLive</a> for 3D live tracking. Enable it in Settings → Live Tracking → SportsTrackLive, and enter your email and password. Your flights will be uploaded automatically and viewable in their 3D viewer.</p>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <h2>Companion Phone App</h2>
+
+  <div class="feature-section">
+    <div class="feature-text">
+      <p>The Riser companion app on your Android phone receives flight logs automatically from your watch. For each flight you can:</p>
+      <ul>
+        <li><strong>Share</strong> — Export the IGC file to any app</li>
+        <li><strong>Upload to XContest</strong> — Submit directly to the world's largest paragliding competition platform</li>
+        <li><strong>Upload to SportsTrackLive</strong> — View your flight in 3D</li>
+        <li><strong>Name your flights</strong> — Tap the edit icon to add a memorable name</li>
+        <li><strong>Delete</strong> — Remove unwanted flights</li>
+      </ul>
+      <p>Flights sync automatically when your watch and phone are connected. Tap the refresh button to request missing flights.</p>
+    </div>
+    <div class="feature-mockup">
+      <div class="watch-frame">
+        <div class="watch-screen">
+          <span class="watch-time">GLIDE</span>
+          <div class="watch-row"><span class="value cyan" style="font-size:1.3rem">12.4</span><span class="unit">km</span></div>
+          <div class="watch-row"><span class="value cyan" style="font-size:1.3rem">1,240</span><span class="unit">max ft</span></div>
+          <div class="watch-row"><span class="value" style="font-size:1.1rem">48:32</span><span class="unit">time</span></div>
+          <div class="watch-row"><span class="value" style="font-size:1rem">72%</span><span class="unit">bat</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <h2>External BLE Vario</h2>
+
+  <p>Connect a dedicated Bluetooth vario (XCTracer, Skydrop, BlueFlyVario, Stodeus) for superior pressure data. The hardware vario's sensor replaces the watch's built-in barometer.</p>
+
+  <h3>Pairing a Device</h3>
+  <ol>
+    <li>In Settings → External Vario → enable <strong>BLE Vario</strong></li>
+    <li>Tap <strong>Device</strong> to scan for nearby BLE varios</li>
+    <li>Select your device from the list</li>
+    <li>Riser auto-connects at the start of each flight</li>
+  </ol>
+
+  <p>When connected, the Glide/Nav screen shows wind data (if your vario sends LXWP0) and both watch + vario battery levels. The Thermal screen shows an "EXT VARIO" indicator at the bottom.</p>
+
+  <div class="feature-section reverse">
+    <div class="feature-text">
+      <h3>Automatic Fallback</h3>
+      <p>If the BLE vario disconnects mid-flight (out of range, battery dies), Riser seamlessly falls back to the watch's built-in barometer. No data gap, no user action needed. When the vario reconnects, Riser switches back automatically.</p>
+    </div>
+    <div class="feature-mockup">
+      <div class="watch-frame">
+        <div class="watch-screen">
+          <span class="watch-time">GLIDE</span>
+          <div class="watch-row"><span class="value cyan" style="font-size:1.3rem">8.2</span><span class="unit">km</span></div>
+          <div class="watch-row"><span class="value cyan" style="font-size:1.3rem">980</span><span class="unit">max ft</span></div>
+          <div class="watch-row"><span class="value" style="font-size:1.1rem; color:#81d4fa">15 NW</span><span class="unit">wind</span></div>
+          <div class="watch-row"><span class="value" style="font-size:1rem">72<span class="dim">/</span><span class="green">85</span>%</span><span class="unit">bat</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <h2>Settings Reference</h2>
+
+  <h3>Pilot & Glider</h3>
+  <ul>
+    <li><strong>Pilot Name</strong> — Embedded in IGC files</li>
+    <li><strong>Glider Type</strong> — Your wing model (e.g., "Advance Alpha 7")</li>
+    <li><strong>Registration</strong> — Glider registration number</li>
+  </ul>
+
+  <h3>Feedback</h3>
+  <ul>
+    <li><strong>Feedback Mode</strong> — Audio + Haptic, Audio Only, Haptic Only, or Off</li>
+    <li><strong>Feedback Profile</strong> — Classic, Sensitive, Mellow — adjusts audio tone mapping and haptic intensity</li>
+  </ul>
+
+  <h3>Units</h3>
+  <ul>
+    <li><strong>Use Imperial</strong> — Toggle sets all units at once (ft, mph, mi, ft/min)</li>
+    <li>Individual units can be customized: vertical speed, ground speed, altitude, distance</li>
+  </ul>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <h2>Tips & Troubleshooting</h2>
+
+  <div class="tip-box">
+    <strong>No vario audio?</strong> Check that Feedback Mode is set to "Audio + Haptic" or "Audio Only" in Settings. Also check your watch's ring volume is up.
+  </div>
+
+  <div class="tip-box">
+    <strong>GPS not connecting?</strong> Make sure location permissions are granted. GPS may take 30-60 seconds to get a first fix, especially if the watch hasn't been used outdoors recently.
+  </div>
+
+  <div class="tip-box">
+    <strong>Flights not syncing to phone?</strong> Ensure your watch and phone are connected via Bluetooth. Open the phone app and tap the refresh button to request missing flights.
+  </div>
+
+  <div class="tip-box">
+    <strong>Complication not detecting flights?</strong> Make sure the ring is filled (armed). The complication monitors for 2 hours after tapping — re-arm if your session is longer.
+  </div>
+
+</div>
+
+<footer>
+  <p>&copy; 2026 Hall Labs LLC &nbsp;·&nbsp; <a href="/privacy.html">Privacy Policy</a> &nbsp;·&nbsp; <a href="/">Home</a></p>
+</footer>
+
+</body>
+</html>

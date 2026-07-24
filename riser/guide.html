@@ -294,7 +294,12 @@
     <li><strong>Ridge detection</strong> — Sustained speed with frequent bearing changes (ridge soaring back and forth)</li>
     <li><strong>Elevation confirmation</strong> — Google Elevation API confirms you're above ground level, filtering out driving on hills</li>
   </ul>
-  <p>Landing is also detected automatically — when your speed drops below walking pace for 90 seconds, you'll be prompted to stop the flight.</p>
+  <h3>Auto-Detect Landing</h3>
+  <p>When the complication is armed and a flight is being tracked, Riser also monitors for landing. When your speed drops below walking pace for 90 seconds, you'll be prompted to stop the flight — either via an in-app prompt or a notification if the app is in the background.</p>
+
+  <div class="tip-box">
+    <strong>Note:</strong> The complication monitors for 2 hours after arming. If no flight is detected in that time, it automatically disarms (ring empties). Re-tap to arm again for another 2-hour window.
+  </div>
 
   <!-- ═══════════════════════════════════════════ -->
   <h2>Live Tracking</h2>

@@ -132,10 +132,13 @@
       border: 3px solid;
       display: flex; align-items: center; justify-content: center;
       margin: 0 auto 0.5rem;
-      font-size: 1.5rem;
+      background: #1a1a2e;
     }
-    .comp-circle.armed { border-color: #e88585; background: rgba(232,133,133,0.1); color: #e88585; }
-    .comp-circle.disarmed { border-color: #555; background: transparent; color: #888; }
+    .comp-circle.armed { border-color: #e88585; }
+    .comp-circle.disarmed { border-color: #555; }
+    .comp-circle svg { width: 32px; height: 32px; }
+    .comp-circle.armed svg { fill: #e8e8e8; }
+    .comp-circle.disarmed svg { fill: #666; }
     .comp-label { font-size: 0.8125rem; color: var(--color-text-secondary); font-weight: 500; }
     .comp-arrow { font-size: 1.5rem; color: var(--color-text-secondary); }
 
@@ -264,12 +267,12 @@
   <h3>Arming & Disarming</h3>
   <div class="complication-demo">
     <div class="comp-state">
-      <div class="comp-circle disarmed">🪂</div>
+      <div class="comp-circle disarmed"><svg viewBox="0 0 24 24"><path d="M12 17C10.9 17 10 16.11 10 15S10.9 13 12 13 14 13.9 14 15 13.11 17 12 17M19 14H17C17 16.76 14.76 19 12 19S7 16.76 7 14H5C5 16.79 6.64 19.19 9 20.32V23H15V20.32C17.36 19.19 19 16.79 19 14M23 7.76C23.04 8.56 22.05 9.06 21.41 8.6C21.27 8.46 21.16 8.44 21 8.32L18.97 13H17L15.5 6.73C13.21 6.5 10.79 6.5 8.5 6.73L7 13H5.03L3 8.32C2.84 8.44 2.73 8.46 2.59 8.6C1.95 9.06 .959 8.56 1 7.76V4C1 4 1 1 12 1S23 4 23 4M6.9 7C6 7.2 5.15 7.43 4.37 7.71L5.87 11.27L6.9 7M19.63 7.71C18.85 7.43 18 7.2 17.1 7L18.13 11.27L19.63 7.71Z"/></svg></div>
       <span class="comp-label">Disarmed</span>
     </div>
     <span class="comp-arrow">→ tap →</span>
     <div class="comp-state">
-      <div class="comp-circle armed">🪂</div>
+      <div class="comp-circle armed"><svg viewBox="0 0 24 24"><path d="M12 17C10.9 17 10 16.11 10 15S10.9 13 12 13 14 13.9 14 15 13.11 17 12 17M19 14H17C17 16.76 14.76 19 12 19S7 16.76 7 14H5C5 16.79 6.64 19.19 9 20.32V23H15V20.32C17.36 19.19 19 16.79 19 14M23 7.76C23.04 8.56 22.05 9.06 21.41 8.6C21.27 8.46 21.16 8.44 21 8.32L18.97 13H17L15.5 6.73C13.21 6.5 10.79 6.5 8.5 6.73L7 13H5.03L3 8.32C2.84 8.44 2.73 8.46 2.59 8.6C1.95 9.06 .959 8.56 1 7.76V4C1 4 1 1 12 1S23 4 23 4M6.9 7C6 7.2 5.15 7.43 4.37 7.71L5.87 11.27L6.9 7M19.63 7.71C18.85 7.43 18 7.2 17.1 7L18.13 11.27L19.63 7.71Z"/></svg></div>
       <span class="comp-label">Armed</span>
     </div>
   </div>

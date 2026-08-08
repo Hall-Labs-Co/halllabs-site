@@ -241,10 +241,10 @@
   <!-- Privacy Policy -->
   <div class="policy">
     <h1>Privacy Policy</h1>
-    <p class="effective-date">Effective date: April 4, 2026</p>
+    <p class="effective-date">Effective date: August 8, 2026</p>
 
     <div class="summary-box">
-      <p>Riser does not collect, transmit, or share your personal data with anyone. All data stays on your devices.</p>
+      <p>Riser does not collect personal data for analytics, advertising, or profiling. All flight data stays on your devices unless you choose to enable optional live tracking services.</p>
     </div>
 
     <p>This privacy policy describes how Hall Labs LLC ("we", "us", or "our") handles information in the Riser paragliding variometer app for Wear OS and its companion Android app (together, the "App"). We are committed to protecting your privacy and being transparent about our practices.</p>
@@ -254,7 +254,7 @@
     <ul>
       <li><strong>GPS location</strong> — latitude, longitude, altitude, speed, and bearing, used to calculate vertical speed, track your flight path, and record GPS fixes for IGC export.</li>
       <li><strong>Barometric pressure</strong> — used to calculate pressure altitude and detect takeoff and landing.</li>
-      <li><strong>Activity recognition</strong> — used by the Wear OS Health Services API to enable physical button control during flight.</li>
+      <li><strong>Activity recognition</strong> — used by the Wear OS Health Services API to enable physical button control during active flight sessions.</li>
       <li><strong>Battery status</strong> — used to display battery level and activate power-saving GPS intervals.</li>
     </ul>
 
@@ -277,11 +277,12 @@
     <p>No data is stored on our servers. We do not operate servers or cloud services for the App.</p>
 
     <h2>Data Sharing and Transmission</h2>
-    <p><strong>We do not collect, transmit, or share your data.</strong></p>
+    <p><strong>We do not collect or share your data with Hall Labs or any third party for analytics, advertising, or profiling.</strong></p>
     <ul>
-      <li>The Wear OS watch app has no internet permission and cannot send data to the internet.</li>
       <li>Flight data syncs from your watch to your paired phone over Bluetooth via the Wear OS Data Layer. This is a direct, encrypted connection between your own devices and does not pass through any external server.</li>
-      <li>You may choose to share IGC flight files from the phone app using Android's share function (e.g., email, cloud storage). This is entirely your choice — the App never uploads data automatically.</li>
+      <li><strong>Live tracking (optional)</strong> — if you configure LiveTrack24 or SportsTrackLive credentials in Settings, the watch app sends your GPS position to those services during active flight sessions only. No data is sent when you are not flying. These are third-party services with their own privacy policies, and you choose whether to enable them.</li>
+      <li><strong>Elevation API</strong> — during armed flight detection, the app may query the Google Elevation API with your approximate GPS coordinates to confirm you are airborne. No personal information is included in these requests.</li>
+      <li>You may choose to share or upload IGC flight files from the phone app. This is entirely your choice — the App never uploads flight data automatically.</li>
     </ul>
 
     <h2>Third-Party Services</h2>
@@ -292,13 +293,13 @@
       <li>No advertising networks</li>
       <li>No third-party SDKs that collect or transmit user data</li>
     </ul>
-    <p>The App uses Google Play Services solely for on-device functionality: location services (GPS), Health Services (button control), and the Wear Data Layer (local watch-to-phone sync).</p>
+    <p>The App uses Google Play Services for on-device functionality: location services (GPS), Health Services (button control), the Wear Data Layer (local watch-to-phone sync), and the Google Elevation API (flight detection confirmation). If you enable live tracking, the App connects directly to LiveTrack24 and/or SportsTrackLive using credentials you provide.</p>
 
     <h2>Background Location Access</h2>
     <p>The App requests background location permission to enable two features:</p>
     <ul>
       <li><strong>Active flight tracking</strong> — GPS recording continues when the watch screen turns off during flight, so your track is not interrupted.</li>
-      <li><strong>Automatic flight detection</strong> — if enabled in Settings, the App monitors barometric pressure in the background to detect takeoff. GPS is only activated briefly to confirm flight conditions and is not recorded until you start a flight session.</li>
+      <li><strong>Automatic flight detection</strong> — when armed via the watch face complication, the App monitors barometric pressure to detect takeoff. GPS is activated to confirm flight conditions and is not recorded until you start a flight session.</li>
     </ul>
     <p>Background location data is processed entirely on your device and is never transmitted externally.</p>
 

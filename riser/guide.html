@@ -110,7 +110,7 @@
     }
     .watch-screen .watch-row {
       display: flex; align-items: baseline; gap: 0.2rem;
-      width: 100%;
+      justify-content: center;
     }
     .watch-screen .value { font-weight: 500; letter-spacing: -0.04em; line-height: 1.15; }
     .watch-screen .unit { font-size: 0.625rem; color: rgba(255,255,255,0.7); }
@@ -258,6 +258,13 @@
             <div style="width:4px; height:4px; border-radius:50%; background:#4fc3f7;"></div>
             <div style="width:4px; height:4px; border-radius:50%; background:rgba(255,255,255,0.3);"></div>
           </div>
+          <!-- Horizontal page dots -->
+          <div style="position:absolute; bottom:5%; left:50%; transform:translateX(-50%); display:flex; gap:3px;">
+            <div style="width:3px; height:3px; border-radius:50%; background:rgba(255,255,255,0.3);"></div>
+            <div style="width:3px; height:3px; border-radius:50%; background:#4fc3f7;"></div>
+          </div>
+          <!-- Home beacon -->
+          <div style="position:absolute; bottom:16%; right:14%; width:6px; height:6px; border-radius:50%; background:#FFA726;"></div>
           <div class="watch-row"><span class="value cyan" style="font-size:1.3rem">1,240</span><span class="unit">ft</span></div>
           <div class="watch-row"><span class="value cyan" style="font-size:1.7rem">+2.4</span><span class="unit">m/s</span></div>
           <div class="watch-row"><span class="value" style="font-size:1.1rem">24</span><span class="unit">km/h</span></div>
@@ -418,16 +425,33 @@
       <p>Flights sync automatically when your watch and phone are connected. Tap the refresh button to request missing flights.</p>
     </div>
     <div class="feature-mockup">
-      <div class="watch-frame">
-        <div class="watch-screen">
-          <div style="position:absolute; right:6%; top:50%; transform:translateY(-50%); display:flex; flex-direction:column; gap:3px;">
-            <div style="width:4px; height:4px; border-radius:50%; background:rgba(255,255,255,0.3);"></div>
-            <div style="width:4px; height:4px; border-radius:50%; background:#4fc3f7;"></div>
+      <div style="width:180px; background:#111; border-radius:20px; padding:10px 8px; box-shadow:0 12px 40px rgba(0,0,0,0.12); border:2px solid #222; font-family:sans-serif;">
+        <div style="display:flex; align-items:center; gap:0.3rem; padding:0.4rem 0.6rem;">
+          <span style="font-size:0.65rem; font-weight:600; color:#fff; flex:1;">Flight Log</span>
+          <span style="font-size:0.65rem; color:#4fc3f7;">&#8635;</span>
+        </div>
+        <div style="font-size:0.35rem; color:rgba(255,255,255,0.4); padding:0 0.6rem 0.3rem;">Total: 2h 15m across 4 flights</div>
+        <div style="background:#1a1a2e; border-radius:8px; padding:0.4rem 0.5rem; margin:0 0.2rem 0.3rem;">
+          <div style="font-size:0.3rem; color:rgba(255,255,255,0.4); margin-bottom:0.1rem;">Sep 13, 2026 12:55</div>
+          <div style="font-size:0.4rem; font-weight:600; color:#fff; margin-bottom:0.3rem;">Torrey Pines Ridge</div>
+          <div style="display:flex; justify-content:space-between; margin-bottom:0.3rem;">
+            <div><span style="font-size:0.4rem; font-weight:600; color:#4fc3f7;">347ft</span><br><span style="font-size:0.25rem; color:rgba(255,255,255,0.35);">max alt</span></div>
+            <div><span style="font-size:0.4rem; font-weight:600; color:#4fc3f7;">2.1km</span><br><span style="font-size:0.25rem; color:rgba(255,255,255,0.35);">distance</span></div>
+            <div><span style="font-size:0.4rem; font-weight:600; color:#fff;">19m</span><br><span style="font-size:0.25rem; color:rgba(255,255,255,0.35);">duration</span></div>
           </div>
-          <div class="watch-row"><span class="value cyan" style="font-size:1.3rem">12.4</span><span class="unit">km</span></div>
-          <div class="watch-row"><span class="value cyan" style="font-size:1.5rem">1,240</span><span class="unit">max ft</span></div>
-          <div class="watch-row"><span class="value" style="font-size:1.1rem">48:32</span><span class="unit">time</span></div>
-          <div class="watch-row"><span class="value" style="font-size:1rem">72%</span><span class="unit">bat</span></div>
+          <div style="display:flex; gap:0.2rem;">
+            <button style="flex:1; font-size:0.3rem; padding:0.2rem 0; border-radius:5px; border:none; font-weight:600; background:rgba(79,195,247,0.15); color:#4fc3f7; cursor:default;">Share</button>
+            <button style="flex:1; font-size:0.3rem; padding:0.2rem 0; border-radius:5px; border:1px solid rgba(255,255,255,0.15); background:transparent; color:rgba(255,255,255,0.4); font-weight:600; cursor:default;">Delete</button>
+          </div>
+        </div>
+        <div style="background:#1a1a2e; border-radius:8px; padding:0.4rem 0.5rem; margin:0 0.2rem 0.3rem;">
+          <div style="font-size:0.3rem; color:rgba(255,255,255,0.4); margin-bottom:0.1rem;">Sep 12, 2026 12:58</div>
+          <div style="font-size:0.4rem; font-weight:600; color:#fff; margin-bottom:0.3rem;">Afternoon Session</div>
+          <div style="display:flex; justify-content:space-between;">
+            <div><span style="font-size:0.4rem; font-weight:600; color:#4fc3f7;">312ft</span><br><span style="font-size:0.25rem; color:rgba(255,255,255,0.35);">max alt</span></div>
+            <div><span style="font-size:0.4rem; font-weight:600; color:#4fc3f7;">1.8km</span><br><span style="font-size:0.25rem; color:rgba(255,255,255,0.35);">distance</span></div>
+            <div><span style="font-size:0.4rem; font-weight:600; color:#fff;">21m</span><br><span style="font-size:0.25rem; color:rgba(255,255,255,0.35);">duration</span></div>
+          </div>
         </div>
       </div>
     </div>

@@ -864,6 +864,20 @@
         <div class="riser-mockup">
           <div class="watch-frame">
             <div class="watch-screen">
+              <!-- Compass chevron at ~10 o'clock position -->
+              <div style="position:absolute; top:12%; left:22%; width:0; height:0; border-left:5px solid transparent; border-right:5px solid transparent; border-bottom:8px solid rgba(255,255,255,0.85); transform:rotate(-45deg);"></div>
+              <!-- Home beacon at ~5 o'clock position -->
+              <div style="position:absolute; bottom:18%; right:16%; width:8px; height:8px; border-radius:50%; background:#FFA726;"></div>
+              <!-- Vertical page dots (right side) -->
+              <div style="position:absolute; right:6%; top:50%; transform:translateY(-50%); display:flex; flex-direction:column; gap:4px;">
+                <div style="width:5px; height:5px; border-radius:50%; background:#4fc3f7;"></div>
+                <div style="width:5px; height:5px; border-radius:50%; background:rgba(255,255,255,0.3);"></div>
+              </div>
+              <!-- Horizontal page dots (bottom) -->
+              <div style="position:absolute; bottom:5%; left:50%; transform:translateX(-50%); display:flex; gap:4px;">
+                <div style="width:4px; height:4px; border-radius:50%; background:rgba(255,255,255,0.3);"></div>
+                <div style="width:4px; height:4px; border-radius:50%; background:#4fc3f7;"></div>
+              </div>
               <div class="watch-row alt">
                 <span class="value">1,240</span>
                 <span class="unit">m</span>

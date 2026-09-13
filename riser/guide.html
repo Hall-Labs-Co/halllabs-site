@@ -262,11 +262,22 @@
   </div>
 
   <h3>In-Flight Screens</h3>
-  <p>Swipe up/down to switch between two screens:</p>
+  <p>Swipe up/down to switch between two flight screens. Each screen shows 4 configurable data fields. Choose a preset layout or build your own in Settings → Display.</p>
+
+  <h4 style="font-size: 1rem; margin-top: 1.25rem;">Layout Presets</h4>
   <ul>
-    <li><strong>Thermal Screen</strong> — Altitude, vertical speed (vario), ground speed, glide ratio. Your primary screen while thermalling.</li>
-    <li><strong>Glide/Nav Screen</strong> — Distance, max altitude, elapsed time, battery level. Check during glides between thermals.</li>
+    <li><strong>Freeflight</strong> — Screen 1: altitude, vario, speed, L/D. Screen 2: distance, max altitude, time, battery.</li>
+    <li><strong>Paramotor</strong> — Screen 1: altitude, speed, flight time, clock. Screen 2: distance, max altitude, battery, wind.</li>
+    <li><strong>XC</strong> — Screen 1: altitude, vario, distance, L/D. Screen 2: max altitude, speed, time, battery.</li>
+    <li><strong>Custom</strong> — Pick each of the 8 fields individually.</li>
   </ul>
+  <p>Set any field to "None" to remove it — the remaining fields scale up to fill the space.</p>
+
+  <h4 style="font-size: 1rem; margin-top: 1.25rem;">Color Hierarchy</h4>
+  <p>The primary (largest) metric on each screen uses your theme color; other fields are white. State-aware colors override when relevant: vario turns green for climb and red for sink, L/D shifts color by glide quality, and battery turns red when low.</p>
+
+  <h4 style="font-size: 1rem; margin-top: 1.25rem;">Dual Vario System</h4>
+  <p>Riser runs a dual vario system. Audio beeps respond instantly to lift and sink so you can react in real time. The vario number on screen shows a smoothed average, configurable from 1 second to 20 seconds in Settings → Display → Vario Averaging. Shorter averaging is more responsive; longer averaging filters out turbulence noise.</p>
 
   <h3>In-Flight Controls</h3>
   <ul>
@@ -325,6 +336,28 @@
   <div class="tip-box">
     <strong>Note:</strong> The complication monitors for 2 hours after arming. If no flight is detected in that time, it automatically disarms (ring empties). Re-tap to arm again for another 2-hour window.
   </div>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <h2>Compass & Navigation</h2>
+
+  <p>Riser overlays two navigation indicators on the bezel edge of the watch screen during flight. Both can be toggled independently in Settings → Display.</p>
+
+  <h3>Heading Indicator</h3>
+  <p>A white chevron on the bezel edge shows your current direction of travel. It blends magnetometer and GPS data for a stable reading — the magnetometer keeps it responsive during slow flight, while GPS corrects for drift. The heading indicator works indoors and on the ground (magnetometer only) for pre-flight compass checks.</p>
+
+  <h3>Bearing-to-Launch Beacon</h3>
+  <p>A colored dot on the bezel edge always points back toward your takeoff site. The color shifts with distance: <strong>green</strong> when close, through <strong>yellow</strong> and <strong>orange</strong>, to <strong>red</strong> when far away. This requires GPS and only appears during active flight.</p>
+
+  <div class="tip-box">
+    <strong>Tip:</strong> The bearing-to-launch beacon is especially useful on hazy or unfamiliar days. A quick glance at the bezel tells you both which direction is "home" and roughly how far you've gone.
+  </div>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <h2>GPS Wind</h2>
+
+  <p>Riser calculates wind speed and direction from GPS groundspeed variation as you turn. The algorithm needs roughly 270° of heading change (nearly a full circle) to produce a reading. Once calculated, wind data appears on the Wind field if you've configured it in your layout.</p>
+
+  <p>If you have an external BLE vario connected that sends wind data, the vario's wind reading takes priority over the GPS-derived estimate.</p>
 
   <!-- ═══════════════════════════════════════════ -->
   <h2>Live Tracking</h2>
@@ -433,6 +466,15 @@
     <li><strong>Pilot Name</strong> — Embedded in IGC files</li>
     <li><strong>Glider Type</strong> — Your wing model (e.g., "Advance Alpha 7")</li>
     <li><strong>Registration</strong> — Glider registration number</li>
+  </ul>
+
+  <h3>Display</h3>
+  <ul>
+    <li><strong>Layout Preset</strong> — Freeflight, Paramotor, XC, or Custom</li>
+    <li><strong>Custom Slot Configuration</strong> — When using the Custom preset, pick each of the 8 data fields individually</li>
+    <li><strong>Vario Averaging</strong> — Smoothing window for the displayed vario number: 1s, 3s, 5s, 10s, or 20s</li>
+    <li><strong>Heading Indicator</strong> — Show or hide the white heading chevron on the bezel</li>
+    <li><strong>Bearing to Launch</strong> — Show or hide the colored beacon pointing back to takeoff</li>
   </ul>
 
   <h3>Feedback</h3>

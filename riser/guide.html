@@ -540,6 +540,70 @@
   <p>You can sync individual flights to your phone, delete flights, or view detailed stats. Flights are also synced automatically to the companion phone app when your watch and phone are connected.</p>
 
   <!-- ═══════════════════════════════════════════ -->
+  <h2>Technical Details</h2>
+
+  <h3>Flight Detection</h3>
+  <ul>
+    <li>The complication monitors for <strong>2 hours</strong> after arming, then auto-disarms to save battery.</li>
+    <li>Detection fires <strong>once per armed session</strong> — no repeated alerts during a single flight.</li>
+    <li>The alert repeats vibration and alarm sound every 10 seconds, up to 6 times (~90 seconds), then goes silent.</li>
+    <li>Dismissing the notification re-enables detection for your next flight without re-arming.</li>
+    <li>Three detection methods run in parallel:
+      <ul>
+        <li><strong>Thermal</strong> — 20m+ altitude gain with high climb rate variance, speed 10–60 km/h</li>
+        <li><strong>Elevation</strong> — 20m+ altitude gain confirmed by Google Elevation API (40m+ above ground level)</li>
+        <li><strong>Ridge/GPS</strong> — sustained speed 15–60 km/h with 3+ significant bearing changes</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3>Landing Detection</h3>
+  <ul>
+    <li>Only active when the complication is armed.</li>
+    <li>Triggers after <strong>90 seconds</strong> of average speed below 2 m/s with altitude stable within 15 meters.</li>
+    <li>Fires once per flight — won't keep alerting if you're standing on the field.</li>
+  </ul>
+
+  <h3>Bearing-to-Launch Beacon</h3>
+  <ul>
+    <li>Appears once GPS bearings are consistent (3+ fixes agreeing within 20°) and you're at least 20 meters from launch.</li>
+    <li>Once activated, stays visible for the entire flight — it won't disappear when you return close to launch.</li>
+    <li>Color indicates distance:
+      <ul>
+        <li><strong style="color:#4CAF50;">Green</strong> — close (~75m)</li>
+        <li><strong style="color:#FFEB3B;">Yellow</strong> — ~1 km</li>
+        <li><strong style="color:#FFA726;">Orange</strong> — ~2 km</li>
+        <li><strong style="color:#F44336;">Red</strong> — 3 km or more</li>
+      </ul>
+    </li>
+    <li>Colors blend smoothly — every distance has a unique shade.</li>
+  </ul>
+
+  <h3>Compass Heading</h3>
+  <ul>
+    <li>Uses the watch magnetometer when stationary or slow, GPS bearing when moving faster than ~13 km/h.</li>
+    <li>Blends smoothly between the two sources — no abrupt switching.</li>
+    <li>Magnetic declination is automatically corrected using your GPS location.</li>
+    <li>May be less accurate indoors or near metal/electronics.</li>
+  </ul>
+
+  <h3>GPS Wind</h3>
+  <ul>
+    <li>Requires approximately 270° of heading change (a near-complete circle or series of turns).</li>
+    <li>Calculated from the difference between maximum and minimum groundspeed during the turn.</li>
+    <li>Updates automatically as you continue flying — each new turn refines the estimate.</li>
+    <li>External BLE vario wind data overrides the GPS calculation when connected.</li>
+  </ul>
+
+  <h3>Dual Vario System</h3>
+  <ul>
+    <li><strong>Audio/haptic vario</strong> — responds in ~0.8 seconds. Drives beep tones and vibration so you feel lift immediately.</li>
+    <li><strong>Display vario</strong> — averaged over a configurable period (1s to 20s, default 3s). Shows a stable number on screen.</li>
+    <li>Both run simultaneously from the barometer sensor at 5Hz.</li>
+    <li>Shorter averaging = more responsive but noisier. Longer = smoother but delayed. Most pilots use 3–5 seconds.</li>
+  </ul>
+
+  <!-- ═══════════════════════════════════════════ -->
   <h2>Tips & Troubleshooting</h2>
 
   <div class="tip-box">

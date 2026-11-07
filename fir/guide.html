@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Guide — Fir by Hall Labs</title>
+  <meta name="description" content="User guide for Fir, the personalized AI food scanner app for Android.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --color-bg: #ffffff;
+      --color-bg-alt: #f7f8fa;
+      --color-text: #1a1a2e;
+      --color-text-secondary: #555770;
+      --color-accent: #2c5cc5;
+      --color-accent-light: #e8eef9;
+      --color-border: #e2e4e9;
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-sans); color: var(--color-text); background: var(--color-bg); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    nav { position: fixed; top: 0; left: 0; right: 0; background: rgba(255,255,255,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid var(--color-border); z-index: 100; }
+    .nav-inner { max-width: 1100px; margin: 0 auto; padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .nav-logo { font-size: 1.125rem; font-weight: 700; color: var(--color-text); text-decoration: none; letter-spacing: -0.02em; }
+    .nav-logo span { color: var(--color-accent); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { font-size: 0.875rem; font-weight: 500; color: var(--color-text-secondary); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--color-accent); }
+    .guide { padding: 100px 1.5rem 3rem; max-width: 780px; margin: 0 auto; }
+    .guide h1 { font-size: 2rem; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 0.5rem; }
+    .guide .subtitle { font-size: 1.125rem; color: var(--color-text-secondary); margin-bottom: 2.5rem; line-height: 1.7; }
+    .guide h2 { font-size: 1.25rem; font-weight: 600; margin-top: 2.5rem; margin-bottom: 0.75rem; }
+    .guide h3 { font-size: 1.0625rem; font-weight: 600; margin-top: 1.5rem; margin-bottom: 0.5rem; }
+    .guide p { color: var(--color-text-secondary); font-size: 0.9375rem; line-height: 1.8; margin-bottom: 1rem; }
+    .guide ul { color: var(--color-text-secondary); font-size: 0.9375rem; line-height: 1.8; margin-bottom: 1rem; margin-left: 1.5rem; }
+    .guide li { margin-bottom: 0.375rem; }
+    .guide a { color: var(--color-accent); text-decoration: none; }
+    .guide a:hover { text-decoration: underline; }
+    .tip-box { background: var(--color-accent-light); border-left: 4px solid var(--color-accent); border-radius: 0 8px 8px 0; padding: 1rem 1.5rem; margin: 1rem 0; }
+    .tip-box p { color: var(--color-text); margin: 0; }
+    footer { padding: 2rem; border-top: 1px solid var(--color-border); text-align: center; font-size: 0.8125rem; color: var(--color-text-secondary); }
+    @media (max-width: 768px) {
+      .guide { padding: 80px 1.5rem 2rem; }
+      .guide h1 { font-size: 1.75rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">Hall Labs <span>LLC</span></a>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/#fir">Fir</a></li>
+        <li><a href="/fir/privacy.html">Privacy</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="guide">
+    <h1>Fir User Guide</h1>
+    <p class="subtitle">Scan food products, get personalized health grades based on your allergies and dietary preferences, and see who really makes your food.</p>
+
+    <h2>Getting Started</h2>
+
+    <h3>1. Set Up Your Profile</h3>
+    <p>When you first open Fir, you'll set up your personal sensitivity profile. Choose from 25+ templates covering medical allergies, dietary conditions, and lifestyle preferences. You can adjust severity levels and add custom sensitivities.</p>
+
+    <h3>2. Start Your Free Trial</h3>
+    <p>After setting up your profile, you'll be prompted to start a 7-day free trial. You get full access to all features during the trial with no charge. Cancel anytime before the trial ends.</p>
+
+    <h3>3. Scan a Product</h3>
+    <p>Point your camera at a product's barcode. Fir will instantly look up the product and give you a personalized grade. Keep the camera pointed at the ingredient label for enhanced AI analysis.</p>
+
+    <h2>Understanding Your Results</h2>
+
+    <h3>Letter Grades</h3>
+    <p>Every product gets a letter grade from A+ to F based on three factors:</p>
+    <ul>
+      <li><strong>Nutrition Score</strong> — based on Nutri-Score data (calories, fat, sugar, fiber, protein)</li>
+      <li><strong>Processing Score</strong> — based on NOVA food processing classification and additive analysis</li>
+      <li><strong>Personal Match</strong> — based on how well the product matches your specific sensitivity profile</li>
+    </ul>
+    <p>The weight of each factor depends on your profile type. Medical profiles weight personal match heavily; diet profiles balance all three more evenly.</p>
+
+    <h3>Flagged Ingredients</h3>
+    <p>Ingredients that match your sensitivities are highlighted in color-coded chips:</p>
+    <ul>
+      <li><strong>Red</strong> — matches a sensitivity you've marked as severe/allergic</li>
+      <li><strong>Orange</strong> — matches a moderate sensitivity (intolerant)</li>
+      <li><strong>Yellow</strong> — matches a mild preference (prefer to avoid)</li>
+    </ul>
+
+    <h3>Brand Trust</h3>
+    <p>For products with AI analysis, you'll see a brand trust card showing parent company ownership, trust grade, and any concerns about ingredient changes after acquisitions.</p>
+
+    <h3>Data Sources</h3>
+    <p>Chips at the bottom of each result show where the data came from:</p>
+    <ul>
+      <li><strong>Barcode</strong> — product data from the Open Food Facts database</li>
+      <li><strong>Label</strong> — ingredient text read from the physical label via OCR</li>
+      <li><strong>AI</strong> — enhanced analysis from our AI service</li>
+    </ul>
+
+    <div class="tip-box">
+      <p><strong>Tip:</strong> After scanning a barcode, keep pointing your camera at the ingredient label. Fir will read the label and send it to AI for deeper analysis — especially useful for trace allergen warnings that aren't in the barcode database.</p>
+    </div>
+
+    <h2>Important Limitations</h2>
+    <p>Fir is an informational tool, not a safety device. Please read our <a href="/fir/terms.html">Terms of Service</a> for full details. Key points:</p>
+    <ul>
+      <li>Always read the physical product label — it is the most authoritative source of ingredient information.</li>
+      <li>Product databases may be outdated or incorrect. Formulations change without notice.</li>
+      <li>The App cannot detect manufacturing cross-contamination or shared-facility risks.</li>
+      <li>A positive grade does not mean a product is safe for you to consume.</li>
+      <li>Fir is not a substitute for professional medical advice from a doctor or allergist.</li>
+    </ul>
+
+    <h2>Managing Your Subscription</h2>
+    <p>Your subscription is managed through Google Play. To change or cancel:</p>
+    <ul>
+      <li>Open Google Play Store on your phone</li>
+      <li>Tap your profile icon &rarr; Payments &amp; subscriptions &rarr; Subscriptions</li>
+      <li>Find Fir and tap Manage</li>
+    </ul>
+    <p>If you switch devices, tap "Restore Purchases" on the paywall screen to recover your subscription.</p>
+
+    <h2>Support</h2>
+    <p>Questions or feedback? Contact us at <a href="mailto:info@halllabs.co">info@halllabs.co</a></p>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 Hall Labs LLC. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

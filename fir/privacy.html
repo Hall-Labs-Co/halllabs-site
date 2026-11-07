@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — Fir by Hall Labs</title>
+  <meta name="description" content="Privacy policy for Fir, the personalized AI food scanner app for Android.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --color-bg: #ffffff;
+      --color-bg-alt: #f7f8fa;
+      --color-text: #1a1a2e;
+      --color-text-secondary: #555770;
+      --color-accent: #2c5cc5;
+      --color-accent-light: #e8eef9;
+      --color-border: #e2e4e9;
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-sans); color: var(--color-text); background: var(--color-bg); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    nav { position: fixed; top: 0; left: 0; right: 0; background: rgba(255,255,255,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid var(--color-border); z-index: 100; }
+    .nav-inner { max-width: 1100px; margin: 0 auto; padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .nav-logo { font-size: 1.125rem; font-weight: 700; color: var(--color-text); text-decoration: none; letter-spacing: -0.02em; }
+    .nav-logo span { color: var(--color-accent); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { font-size: 0.875rem; font-weight: 500; color: var(--color-text-secondary); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--color-accent); }
+    .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; }
+    .nav-toggle span { display: block; width: 22px; height: 2px; background: var(--color-text); margin: 5px 0; transition: 0.2s; }
+    .policy { padding: 8rem 2rem 4rem; max-width: 780px; margin: 0 auto; }
+    .policy h1 { font-size: 2rem; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 0.5rem; line-height: 1.2; }
+    .policy .effective-date { font-size: 0.875rem; color: var(--color-text-secondary); margin-bottom: 2.5rem; }
+    .policy h2 { font-size: 1.25rem; font-weight: 600; margin-top: 2.5rem; margin-bottom: 0.75rem; letter-spacing: -0.01em; }
+    .policy p { color: var(--color-text-secondary); font-size: 0.9375rem; line-height: 1.8; margin-bottom: 1rem; }
+    .policy ul { color: var(--color-text-secondary); font-size: 0.9375rem; line-height: 1.8; margin-bottom: 1rem; margin-left: 1.5rem; }
+    .policy li { margin-bottom: 0.375rem; }
+    .policy a { color: var(--color-accent); text-decoration: none; }
+    .policy a:hover { text-decoration: underline; }
+    .policy .summary-box { background: var(--color-accent-light); border-radius: 10px; padding: 1.5rem 2rem; margin-bottom: 2.5rem; }
+    .policy .summary-box p { color: var(--color-text); font-weight: 500; margin: 0; }
+    footer { padding: 2rem; border-top: 1px solid var(--color-border); text-align: center; font-size: 0.8125rem; color: var(--color-text-secondary); }
+    @media (max-width: 768px) {
+      .nav-links { display: none; position: absolute; top: 64px; left: 0; right: 0; background: rgba(255,255,255,0.98); backdrop-filter: blur(12px); flex-direction: column; padding: 1.5rem 2rem; gap: 1.25rem; border-bottom: 1px solid var(--color-border); }
+      .nav-links.open { display: flex; }
+      .nav-toggle { display: block; }
+      .policy { padding: 7rem 1.5rem 3rem; }
+      .policy h1 { font-size: 1.75rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">Hall Labs <span>LLC</span></a>
+      <button class="nav-toggle" aria-label="Toggle navigation" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="/#services">Services</a></li>
+        <li><a href="/#fir">Fir</a></li>
+        <li><a href="/#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="policy">
+    <h1>Privacy Policy</h1>
+    <p class="effective-date">Effective date: November 7, 2026</p>
+
+    <div class="summary-box">
+      <p>Fir does not collect personal data for analytics, advertising, or profiling. Your allergy and sensitivity profile stays on your device. AI analysis requests contain no personally identifiable information — only ingredient text and sensitivity type names.</p>
+    </div>
+
+    <p>This privacy policy describes how Hall Labs LLC ("we", "us", or "our") handles information in the Fir food scanner app for Android (the "App"). We are committed to protecting your privacy and being transparent about our practices.</p>
+
+    <h2>Information the App Accesses</h2>
+    <p>To scan and analyze food products, the App accesses the following:</p>
+    <ul>
+      <li><strong>Camera</strong> — used to scan barcodes and read ingredient labels via on-device machine learning. Images are processed in real-time and are never stored, uploaded, or transmitted.</li>
+    </ul>
+
+    <h2>Information You Provide</h2>
+    <p>The App allows you to set up a personal profile including:</p>
+    <ul>
+      <li>Dietary preferences (e.g., vegan, keto, paleo)</li>
+      <li>Food allergies and sensitivities (e.g., gluten, dairy, nuts)</li>
+      <li>Sensitivity severity levels</li>
+    </ul>
+    <p>This information is stored locally on your device and is used solely to personalize your scan results. It is never uploaded to our servers or shared with any third party.</p>
+
+    <h2>How Data Is Stored</h2>
+    <p>All personal data is stored locally on your device:</p>
+    <ul>
+      <li>Your allergy/sensitivity profile is saved in a local database on the device.</li>
+      <li>Scan history and product data are saved in a local database on the device.</li>
+      <li>No personal data is stored on our servers.</li>
+    </ul>
+
+    <h2>Data Sharing and Transmission</h2>
+    <p><strong>We do not collect or share your personal data with Hall Labs or any third party for analytics, advertising, or profiling.</strong></p>
+    <p>The App makes the following network requests:</p>
+    <ul>
+      <li><strong>Open Food Facts API</strong> — when you scan a barcode, the App sends the barcode number to the Open Food Facts public database to retrieve product information (name, ingredients, nutrition data). No personal information is included in these requests.</li>
+      <li><strong>AI Analysis (optional enhancement)</strong> — the App may send ingredient text, product name, brand name, and your sensitivity type names (e.g., "gluten", "dairy" — not your identity or profile details) to our AI proxy server for enhanced analysis. These requests contain no personally identifiable information. The AI proxy does not log or store request data beyond a temporary cache for performance.</li>
+      <li><strong>Subscription management</strong> — the App uses RevenueCat to manage subscriptions. RevenueCat processes purchase data through Google Play. RevenueCat's privacy policy is available at <a href="https://www.revenuecat.com/privacy">revenuecat.com/privacy</a>.</li>
+    </ul>
+
+    <h2>Third-Party Services</h2>
+    <p>The App uses the following third-party services:</p>
+    <ul>
+      <li><strong>Open Food Facts</strong> — open-source food product database. No personal data is sent. <a href="https://world.openfoodfacts.org/terms-of-use">Terms of use</a>.</li>
+      <li><strong>RevenueCat</strong> — subscription management. Processes anonymous purchase data via Google Play. <a href="https://www.revenuecat.com/privacy">Privacy policy</a>.</li>
+      <li><strong>Google ML Kit</strong> — barcode scanning and text recognition run entirely on-device. No data is sent to Google.</li>
+    </ul>
+    <p>The App does not include any analytics, advertising, or crash reporting services.</p>
+
+    <h2>On-Device Processing</h2>
+    <p>The following operations happen entirely on your device and involve no network transmission:</p>
+    <ul>
+      <li>Barcode scanning (ML Kit, on-device)</li>
+      <li>Ingredient label reading via OCR (ML Kit, on-device)</li>
+      <li>Personalized scoring — your health grade is calculated on-device using your local profile</li>
+      <li>Camera image processing — frames are analyzed in memory and never saved</li>
+    </ul>
+
+    <h2>Data Retention and Deletion</h2>
+    <p>You are in full control of your data:</p>
+    <ul>
+      <li>Your allergy profile can be edited or reset at any time from the Profile tab.</li>
+      <li>Scan history can be cleared from Settings.</li>
+      <li>All app data is removed when you uninstall the App.</li>
+      <li>Since no personal data is stored on our servers, there is no remote data to delete.</li>
+    </ul>
+
+    <h2>Children's Privacy</h2>
+    <p>The App is not directed at children under 13. We do not knowingly collect personal information from children.</p>
+
+    <h2>Changes to This Policy</h2>
+    <p>If we update this privacy policy, we will post the revised version on this page with a new effective date. We encourage you to review this page periodically.</p>
+
+    <h2>Contact Us</h2>
+    <p>If you have any questions about this privacy policy or the App's data practices, please contact us at:</p>
+    <p><a href="mailto:info@halllabs.co">info@halllabs.co</a></p>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 Hall Labs LLC. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

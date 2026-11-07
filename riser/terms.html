@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terms of Service — Riser by Hall Labs</title>
+  <meta name="description" content="Terms of service for Riser, the paragliding variometer app for Wear OS and Android.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --color-bg: #ffffff;
+      --color-bg-alt: #f7f8fa;
+      --color-text: #1a1a2e;
+      --color-text-secondary: #555770;
+      --color-accent: #2c5cc5;
+      --color-accent-light: #e8eef9;
+      --color-border: #e2e4e9;
+      --color-warning: #c62828;
+      --color-warning-light: #fce4ec;
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-sans); color: var(--color-text); background: var(--color-bg); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    nav { position: fixed; top: 0; left: 0; right: 0; background: rgba(255,255,255,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid var(--color-border); z-index: 100; }
+    .nav-inner { max-width: 1100px; margin: 0 auto; padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .nav-logo { font-size: 1.125rem; font-weight: 700; color: var(--color-text); text-decoration: none; letter-spacing: -0.02em; }
+    .nav-logo span { color: var(--color-accent); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { font-size: 0.875rem; font-weight: 500; color: var(--color-text-secondary); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--color-accent); }
+    .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; }
+    .nav-toggle span { display: block; width: 22px; height: 2px; background: var(--color-text); margin: 5px 0; transition: 0.2s; }
+    .terms { padding: 8rem 2rem 4rem; max-width: 780px; margin: 0 auto; }
+    .terms h1 { font-size: 2rem; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 0.5rem; line-height: 1.2; }
+    .terms .effective-date { font-size: 0.875rem; color: var(--color-text-secondary); margin-bottom: 2.5rem; }
+    .terms h2 { font-size: 1.25rem; font-weight: 600; margin-top: 2.5rem; margin-bottom: 0.75rem; letter-spacing: -0.01em; }
+    .terms p { color: var(--color-text-secondary); font-size: 0.9375rem; line-height: 1.8; margin-bottom: 1rem; }
+    .terms ul { color: var(--color-text-secondary); font-size: 0.9375rem; line-height: 1.8; margin-bottom: 1rem; margin-left: 1.5rem; }
+    .terms li { margin-bottom: 0.375rem; }
+    .terms a { color: var(--color-accent); text-decoration: none; }
+    .terms a:hover { text-decoration: underline; }
+    .terms .summary-box { background: var(--color-accent-light); border-radius: 10px; padding: 1.5rem 2rem; margin-bottom: 2.5rem; }
+    .terms .summary-box p { color: var(--color-text); font-weight: 500; margin: 0; }
+    .terms .warning-box { background: var(--color-warning-light); border-left: 4px solid var(--color-warning); border-radius: 0 10px 10px 0; padding: 1.5rem 2rem; margin: 1.5rem 0; }
+    .terms .warning-box p { color: var(--color-text); margin: 0; }
+    .terms .warning-box strong { color: var(--color-warning); }
+    footer { padding: 2rem; border-top: 1px solid var(--color-border); text-align: center; font-size: 0.8125rem; color: var(--color-text-secondary); }
+    @media (max-width: 768px) {
+      .nav-links { display: none; position: absolute; top: 64px; left: 0; right: 0; background: rgba(255,255,255,0.98); backdrop-filter: blur(12px); flex-direction: column; padding: 1.5rem 2rem; gap: 1.25rem; border-bottom: 1px solid var(--color-border); }
+      .nav-links.open { display: flex; }
+      .nav-toggle { display: block; }
+      .terms { padding: 7rem 1.5rem 3rem; }
+      .terms h1 { font-size: 1.75rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">Hall Labs <span>LLC</span></a>
+      <button class="nav-toggle" aria-label="Toggle navigation" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="/#services">Services</a></li>
+        <li><a href="/#riser">Riser</a></li>
+        <li><a href="/#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="terms">
+    <h1>Terms of Service</h1>
+    <p class="effective-date">Effective date: November 7, 2026</p>
+
+    <div class="summary-box">
+      <p>Riser is a recreational flight instrument running on consumer-grade hardware. It is not a certified aviation device and must not be relied upon as your sole source of flight data. The pilot in command is always solely responsible for the safe conduct of every flight.</p>
+    </div>
+
+    <div class="warning-box">
+      <p><strong>Important Safety Notice:</strong> Paragliding and hang gliding are inherently dangerous activities that carry significant risks of serious injury or death. Riser is a supplementary flight tool running on consumer-grade smartwatch hardware — it is not a certified flight instrument and has not been tested or approved by any aviation authority (FAA, EASA, or equivalent). Altitude, vertical speed, GPS position, and all other flight data displayed by the App may be inaccurate, delayed, or interrupted at any time without warning due to sensor limitations, GPS signal loss, battery depletion, software errors, or device hardware failures. Never rely on Riser as your sole means of navigation, altitude reference, or safety decision-making. Always carry appropriate safety equipment, maintain situational awareness, and comply with all applicable aviation regulations.</p>
+    </div>
+
+    <p>These terms of service ("Terms") govern your use of the Riser paragliding variometer app for Wear OS and its companion Android app (together, the "App") provided by Hall Labs LLC ("we", "us", or "our"). By using the App, you agree to these Terms.</p>
+
+    <h2>1. Not a Certified Instrument</h2>
+    <p>Riser is a recreational flight instrument designed as a supplementary aid for paragliding and hang gliding pilots. It is expressly not:</p>
+    <ul>
+      <li>A certified aviation instrument under any regulatory authority (FAA, EASA, DGAC, CAA, or any equivalent body worldwide).</li>
+      <li>An approved Electronic Flight Bag (EFB) or primary flight display.</li>
+      <li>A replacement for certified flight instruments, a dedicated variometer, an altimeter, or any other purpose-built aviation equipment.</li>
+      <li>A medical device, emergency beacon, or personal locator device.</li>
+    </ul>
+    <p>The App runs on consumer-grade Wear OS smartwatches that were not designed or tested for aviation use. Sensor quality, accuracy, and reliability vary significantly between device manufacturers and models. Hall Labs makes no representations about the sensor quality or suitability of any third-party hardware for flight use.</p>
+
+    <h2>2. Sensor and Data Accuracy</h2>
+    <p>All flight data displayed by the App is derived from consumer-grade sensors and is provided on an "as-is" basis. Specifically:</p>
+    <ul>
+      <li><strong>Barometric altitude</strong> — derived from the watch's pressure sensor. Accuracy is affected by local weather conditions, temperature, sensor calibration, QNH/QFE settings, and the specific device hardware. Barometric altitude may drift over time and may not reflect true altitude above ground.</li>
+      <li><strong>Vertical speed (vario)</strong> — calculated from barometric pressure or GPS altitude deltas. Vario readings may lag, spike, or be inaccurate due to sensor noise, filtering algorithms, turbulence, or device hardware limitations.</li>
+      <li><strong>GPS position, speed, and track</strong> — dependent on satellite visibility, atmospheric conditions, device antenna quality, and the United States government's operation of the Global Positioning System. GPS altitude is inherently less accurate than barometric altitude. GPS signal may be lost without warning.</li>
+      <li><strong>Compass heading</strong> — derived from magnetometer and accelerometer data. Readings may be affected by magnetic interference, device calibration state, proximity to metal objects, or rapid movement.</li>
+      <li><strong>Flight detection</strong> — the automatic flight detection feature uses heuristics based on barometric pressure changes and GPS data. It may fail to detect takeoff, falsely detect takeoff, or fail to detect landing.</li>
+      <li><strong>Glide ratio and distance calculations</strong> — derived from GPS data and subject to all GPS accuracy limitations.</li>
+    </ul>
+    <p>You must cross-check all flight data against other instruments, visual references, and your own judgment. Do not rely solely on Riser for any safety-critical flight decision.</p>
+
+    <h2>3. Live Tracking Limitations</h2>
+    <p>The App offers optional live tracking integration with third-party services (LiveTrack24, SportsTrackLive). If you enable live tracking:</p>
+    <ul>
+      <li>Live tracking is a <strong>convenience feature only</strong> and is not a substitute for a dedicated personal locator beacon (PLB), satellite communicator (e.g., Garmin inReach, SPOT), or any emergency location device.</li>
+      <li>Tracking depends on cellular/internet connectivity, GPS signal quality, and battery life — all of which can fail simultaneously and without warning, particularly in mountainous terrain where paragliding commonly takes place.</li>
+      <li>If tracking fails, <strong>no notification or alert will be sent to anyone</strong>. Observers of your live track will simply see your position stop updating — they will not be notified of a problem.</li>
+      <li>In an emergency, contact official rescue services directly (112, 911, or your local equivalent). Do not rely on observers of your live track to initiate a rescue.</li>
+      <li>LiveTrack24, SportsTrackLive, and other third-party tracking services may experience their own outages, delays, or data loss independent of the Riser app. These are third-party services with their own terms, and Hall Labs is not responsible for their availability or reliability.</li>
+    </ul>
+
+    <h2>4. Pilot in Command Responsibility</h2>
+    <p>The pilot in command is solely and fully responsible for the safe conduct of every flight, including but not limited to:</p>
+    <ul>
+      <li>Pre-flight assessment of weather conditions, site suitability, and personal fitness to fly.</li>
+      <li>Compliance with all applicable laws, regulations, airspace restrictions, and site rules.</li>
+      <li>Verification of all flight data against official sources, certified instruments, and visual references.</li>
+      <li>The decision to launch, continue flying, or land, regardless of any information displayed by the App.</li>
+      <li>Carrying appropriate safety equipment (reserve parachute, helmet, radio, PLB, first aid) as required by local regulations and good practice.</li>
+      <li>Ensuring the App is functioning correctly before flight and not relying on it if anomalous behavior is observed.</li>
+    </ul>
+    <p>No information displayed by the App overrides the pilot's own judgment, training, experience, or direct observation of conditions.</p>
+
+    <h2>5. Inherently Dangerous Activity and Assumption of Risk</h2>
+    <p>Paragliding, hang gliding, and related air sports are inherently dangerous activities that carry significant and unavoidable risks of serious injury or death. These risks include but are not limited to: equipment failure, turbulence, wind shear, collapse, mid-air collision, impact with terrain or obstacles, drowning, hypothermia, and adverse weather conditions. No amount of care, skill, instruction, experience, or equipment — including this App — can eliminate these risks.</p>
+    <p>By using the App in connection with any flight activity, you expressly acknowledge and voluntarily assume all known and unknown risks associated with paragliding and related air sports, including risks that may be caused in whole or in part by the action, inaction, negligence, or fault of Hall Labs LLC or the App.</p>
+    <p>You agree that the decision to fly with consumer-grade instrumentation (a smartwatch running the Riser app) rather than certified, purpose-built flight instruments is your own choice and carries its own inherent risks, which you voluntarily accept.</p>
+
+    <h2>6. Device and Battery Dependency</h2>
+    <p>The App will cease to function if:</p>
+    <ul>
+      <li>The watch battery is depleted.</li>
+      <li>The Wear OS operating system terminates the App (e.g., for memory management or power saving).</li>
+      <li>Bluetooth connectivity to the companion phone is severed (affecting live tracking and flight sync).</li>
+      <li>The watch hardware malfunctions or sensors become unavailable.</li>
+    </ul>
+    <p>The App may not be able to provide any warning before ceasing operation. You must always be prepared to continue your flight safely without instrumentation.</p>
+
+    <h2>7. Software Updates</h2>
+    <p>App features may change, be added, be removed, or behave differently after software or operating system updates. Always verify correct App operation on the ground before relying on it in flight. After any update, perform a ground test to confirm vario, altitude, GPS, and other features are functioning as expected before your next flight.</p>
+
+    <h2>8. External Variometer Integration</h2>
+    <p>The App supports Bluetooth connectivity to external variometers (XCTracer, Skydrop, BlueFlyVario, and others). Hall Labs does not manufacture, certify, or warranty these third-party devices. Bluetooth connections may be interrupted, delayed, or produce incorrect data. External variometer data is displayed as received — we do not verify its accuracy.</p>
+
+    <h2>9. "As Is" Warranty Disclaimer</h2>
+    <p>THE APP IS PROVIDED "AS IS" AND "AS AVAILABLE," WITH ALL FAULTS AND WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED. TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, HALL LABS LLC DISCLAIMS ALL WARRANTIES, INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, ACCURACY, RELIABILITY, AVAILABILITY, AND NON-INFRINGEMENT.</p>
+    <p>We do not warrant that the App will be uninterrupted, error-free, or free of harmful components, or that defects will be corrected. We do not warrant the accuracy of any flight data, altitude readings, vario calculations, GPS positions, or any other information displayed by the App.</p>
+
+    <h2>10. Limitation of Liability</h2>
+    <p>TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, HALL LABS LLC, ITS OWNERS, EMPLOYEES, AND AFFILIATES SHALL NOT BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES — INCLUDING BUT NOT LIMITED TO PERSONAL INJURY, DEATH, PROPERTY DAMAGE, LOSS OF DATA, OR LOSS OF REVENUE — ARISING OUT OF OR RELATED TO:</p>
+    <ul>
+      <li>Your use of or reliance on the App or any flight data it provides.</li>
+      <li>Inaccurate, delayed, or missing altitude, vario, GPS, compass, or any other data.</li>
+      <li>Failure of the App to detect takeoff, landing, or any flight condition.</li>
+      <li>Failure or interruption of live tracking.</li>
+      <li>Loss of flight log data or IGC files.</li>
+      <li>Bluetooth connectivity failures to companion phone or external variometers.</li>
+      <li>Battery depletion or device malfunction during flight.</li>
+      <li>Any flight decisions you make based on information from the App.</li>
+    </ul>
+    <p>This limitation applies regardless of the legal theory under which damages are sought, including negligence, strict liability, or any other basis. Our total aggregate liability to you for any claim arising from your use of the App shall not exceed the fees you paid to Hall Labs for the App in the twelve (12) months preceding the claim.</p>
+    <p>Nothing in these Terms excludes or limits liability for death or personal injury caused by gross negligence or fraud, to the extent such exclusion or limitation is prohibited by applicable law in your jurisdiction.</p>
+
+    <h2>11. Indemnification</h2>
+    <p>You agree to indemnify, defend, and hold harmless Hall Labs LLC and its owners, employees, and affiliates from any and all claims, damages, losses, liabilities, costs, and expenses (including reasonable legal fees) arising from or related to your use of the App, your flight activities, your violation of these Terms, or your violation of any applicable law or regulation.</p>
+
+    <h2>12. Acceptable Use</h2>
+    <p>You agree not to:</p>
+    <ul>
+      <li>Use the App for any purpose requiring certified aviation instrumentation.</li>
+      <li>Use the App in any manner that violates applicable aviation regulations or local flying rules.</li>
+      <li>Attempt to reverse-engineer, decompile, or extract source code from the App.</li>
+      <li>Redistribute, resell, or commercially exploit the App or data obtained through it.</li>
+    </ul>
+
+    <h2>13. Intellectual Property</h2>
+    <p>The App, its design, code, algorithms, and original content are the property of Hall Labs LLC. Flight data you generate (GPS tracks, IGC files, flight logs) belongs to you.</p>
+
+    <h2>14. Changes to These Terms</h2>
+    <p>We may update these Terms from time to time. The revised version will be posted on this page with a new effective date. Continued use of the App after changes constitutes acceptance of the updated Terms.</p>
+
+    <h2>15. Governing Law</h2>
+    <p>These Terms are governed by the laws of the State of California, United States, without regard to conflict of law principles. Some jurisdictions do not allow the exclusion or limitation of certain warranties or liability — in such jurisdictions, our liability shall be limited to the maximum extent permitted by law.</p>
+
+    <h2>16. Contact Us</h2>
+    <p>If you have questions about these Terms, please contact us at:</p>
+    <p><a href="mailto:info@halllabs.co">info@halllabs.co</a></p>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 Hall Labs LLC. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

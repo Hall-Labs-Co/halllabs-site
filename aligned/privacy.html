@@ -75,7 +75,7 @@
     <p class="effective-date">Effective date: November 11, 2026</p>
 
     <div class="summary-box">
-      <p>I am - Aligned is designed with privacy at its core. Your mood data, personal goals, and emotional states stay on your device. There are no user accounts. AI-generated content requests contain no personally identifiable information. We do not collect, store, or sell your personal data.</p>
+      <p>I am - Aligned is designed with privacy at its core. Your profile, mood history, and goals are stored on your device. There are no user accounts. To create your personalized sessions, the details you choose to share are sent to our server and our AI provider, used to generate that session, and not stored on our servers. We never sell your data or use it for advertising.</p>
     </div>
 
     <p style="margin-bottom: 1.5rem;"><strong>See also:</strong> <a href="/aligned/terms.html">Terms of Service</a> — covers mental health disclaimers, AI content limitations, accessibility service usage, and subscription terms.</p>
@@ -85,18 +85,19 @@
     <h2>Information You Provide</h2>
     <p>The App allows you to:</p>
     <ul>
+      <li>Answer optional setup questions that make up <strong>your profile</strong>: your first name, age range, what you're manifesting and how you describe it, how you want to feel, what gets in your way, who you're becoming, your values, your life situation, relationship status, spiritual preferences, the first names and roles of people who matter to you, what lifts your mood, and when you tend to scroll</li>
       <li>Select personal goals and intentions (e.g., career growth, self-love, abundance)</li>
       <li>Record your current emotional state through mood check-ins</li>
       <li>Identify thoughts or triggers affecting your mood</li>
       <li>Choose which apps trigger a mindset check-in</li>
       <li>Configure preferences for voice, ambient sound, and check-in schedules</li>
     </ul>
-    <p><strong>All of this information is stored locally on your device.</strong> It is never uploaded to our servers, shared with third parties, or used for analytics or advertising.</p>
+    <p>Every profile question is optional and can be skipped. <strong>This information is stored locally on your device.</strong> The parts needed to personalize a session are sent with each content request, as described below. It is never sold, shared for advertising, or used for analytics.</p>
 
     <h2>How Data Is Stored</h2>
     <p>All personal data is stored locally on your device:</p>
     <ul>
-      <li>Your goals, mood history, and preferences are saved in local device storage (Android DataStore).</li>
+      <li>Your profile, goals, mood history, and preferences are saved in local device storage (Android DataStore).</li>
       <li>Session logs (timestamps, mood before/after, session type) are saved in local device storage.</li>
       <li>No personal data is stored on our servers.</li>
       <li>There are no user accounts — the App operates entirely anonymously.</li>
@@ -105,17 +106,18 @@
     <h2>Data Sent to Our Servers</h2>
     <p>When the App generates personalized content, it sends a request to our AI backend containing:</p>
     <ul>
-      <li>Your current mood level (a number from 1-5)</li>
-      <li>Your selected goal categories (e.g., "career", "health" — not free-text personal details)</li>
+      <li>Your current mood level (a number from 1-5) and emotion, if selected</li>
+      <li>Your selected goal categories</li>
       <li>Time of day (morning, afternoon, evening, night)</li>
       <li>Streak count (number of consecutive days)</li>
       <li>The category of the intercepted app, if applicable (e.g., "social_media" — not the specific app name)</li>
       <li>Your thought/trigger text, if you chose to enter one</li>
+      <li>Your profile answers, if you gave them (see "Information You Provide"), including any first names you entered</li>
     </ul>
-    <p><strong>These requests contain no personally identifiable information</strong> — no name, email, device ID, IP address logging, or account identifier. Our AI backend processes the request, generates content, and does not log or store the request data.</p>
+    <p>Requests do not include an email address, account, advertising ID, or device identifier, and are not linked to an identity. Our backend passes the request to our AI provider (Anthropic) to generate your content and does not store the request contents. Our hosting provider may keep standard, short-lived connection logs.</p>
 
     <h2>Text-to-Speech</h2>
-    <p>If you enable spoken affirmations, the text of your personalized content is sent to a third-party text-to-speech service (Replicate) to generate audio. This text contains only the affirmation/reflection content — no personal information. Audio is generated on-demand and is not stored by the service.</p>
+    <p>If you enable spoken affirmations, the text of your personalized content is sent to a third-party text-to-speech service (Replicate) to generate audio. This text contains only the affirmation/reflection content, which may occasionally include your first name if you shared one. Audio is generated on demand and is not stored by us.</p>
 
     <h2>Accessibility Service</h2>
     <p>The App uses Android's AccessibilityService API to detect when you open apps you've chosen to lock. The accessibility service:</p>
@@ -129,23 +131,25 @@
     <h2>Third-Party Services</h2>
     <p>The App uses the following third-party services:</p>
     <ul>
+      <li><strong>Anthropic</strong> — generates your personalized content from the request described above. Anthropic does not use this data to train its models. <a href="https://www.anthropic.com/legal/privacy">Anthropic privacy policy</a>.</li>
+      <li><strong>Google Analytics for Firebase</strong> — records basic app usage, such as which setup step you reached, using an app instance identifier. Your answers, mood entries, and thoughts are never sent to analytics. <a href="https://firebase.google.com/support/privacy">Firebase privacy information</a>.</li>
       <li><strong>Firebase Cloud Messaging</strong> — used to deliver scheduled check-in reminders. Firebase may process a device token for push notification delivery. No personal data is sent through push notifications. <a href="https://firebase.google.com/support/privacy">Firebase privacy information</a>.</li>
       <li><strong>Firebase Remote Config</strong> — used to manage feature flags. No personal data is sent. <a href="https://firebase.google.com/support/privacy">Firebase privacy information</a>.</li>
       <li><strong>RevenueCat</strong> — used to manage subscriptions. RevenueCat processes anonymous purchase data via Google Play. <a href="https://www.revenuecat.com/privacy">RevenueCat privacy policy</a>.</li>
-      <li><strong>Replicate</strong> — used for text-to-speech generation. Only affirmation text is sent — no personal data. <a href="https://replicate.com/privacy">Replicate privacy policy</a>.</li>
+      <li><strong>Replicate</strong> — used for text-to-speech generation. Only affirmation text is sent. <a href="https://replicate.com/privacy">Replicate privacy policy</a>.</li>
     </ul>
-    <p>The App does not include any analytics SDKs, advertising SDKs, or crash reporting services that collect personal data.</p>
+    <p>The App does not include any advertising SDKs.</p>
 
     <h2>Data Retention and Deletion</h2>
     <p>You are in full control of your data:</p>
     <ul>
-      <li>Your goals and preferences can be edited at any time from the Settings screen.</li>
+      <li>Your profile, goals, and preferences can be edited at any time in Settings → Your profile.</li>
       <li>All app data is removed when you uninstall the App.</li>
       <li>Since no personal data is stored on our servers, there is no remote data to delete.</li>
     </ul>
 
     <h2>Sensitive Data</h2>
-    <p>We recognize that mood data, emotional states, and personal goals may be considered sensitive personal information under applicable privacy laws (including the California Consumer Privacy Act). Because this data is stored exclusively on your device and is never transmitted to our servers in an identifiable form, we do not collect, process, or store sensitive personal information on our systems. AI content requests contain only anonymized context (mood level, goal categories) with no user identity attached.</p>
+    <p>We recognize that mood data, emotional states, relationship status, spiritual or religious preferences, and personal goals may be considered sensitive personal information under applicable privacy laws (including the California Consumer Privacy Act). Sharing any of it is optional. It is stored on your device, sent only to generate the session you requested, used for no other purpose, and not stored on our servers or linked to an account. We do not sell or share it, and we do not use it to infer characteristics about you beyond personalizing your content.</p>
 
     <h2>Children's Privacy</h2>
     <p>The App is not directed at children under 13. We do not knowingly collect personal information from children.</p>

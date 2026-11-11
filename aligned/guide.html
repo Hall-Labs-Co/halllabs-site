@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Guide — I am - Aligned by Hall Labs</title>
+  <meta name="description" content="User guide for I am - Aligned, the AI-powered mindset check-in app for Android.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --color-bg: #ffffff;
+      --color-bg-alt: #f7f8fa;
+      --color-text: #1a1a2e;
+      --color-text-secondary: #555770;
+      --color-accent: #2c5cc5;
+      --color-accent-light: #e8eef9;
+      --color-border: #e2e4e9;
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-sans); color: var(--color-text); background: var(--color-bg); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    nav { position: fixed; top: 0; left: 0; right: 0; background: rgba(255,255,255,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid var(--color-border); z-index: 100; }
+    .nav-inner { max-width: 1100px; margin: 0 auto; padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .nav-logo { font-size: 1.125rem; font-weight: 700; color: var(--color-text); text-decoration: none; letter-spacing: -0.02em; }
+    .nav-logo span { color: var(--color-accent); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { font-size: 0.875rem; font-weight: 500; color: var(--color-text-secondary); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--color-accent); }
+    .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; }
+    .nav-toggle span { display: block; width: 22px; height: 2px; background: var(--color-text); margin: 5px 0; transition: 0.2s; }
+    .guide { padding: 8rem 2rem 4rem; max-width: 780px; margin: 0 auto; }
+    .guide h1 { font-size: 2rem; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 0.5rem; line-height: 1.2; }
+    .guide .subtitle { font-size: 1.125rem; color: var(--color-text-secondary); margin-bottom: 2.5rem; }
+    .guide h2 { font-size: 1.25rem; font-weight: 600; margin-top: 2.5rem; margin-bottom: 0.75rem; letter-spacing: -0.01em; }
+    .guide h3 { font-size: 1.0625rem; font-weight: 600; margin-top: 1.5rem; margin-bottom: 0.5rem; }
+    .guide p { color: var(--color-text-secondary); font-size: 0.9375rem; line-height: 1.8; margin-bottom: 1rem; }
+    .guide ul, .guide ol { color: var(--color-text-secondary); font-size: 0.9375rem; line-height: 1.8; margin-bottom: 1rem; margin-left: 1.5rem; }
+    .guide li { margin-bottom: 0.375rem; }
+    .guide a { color: var(--color-accent); text-decoration: none; }
+    .guide a:hover { text-decoration: underline; }
+    .guide .tip-box { background: var(--color-accent-light); border-radius: 10px; padding: 1.25rem 1.5rem; margin: 1.5rem 0; }
+    .guide .tip-box p { color: var(--color-text); margin: 0; }
+    footer { padding: 2rem; border-top: 1px solid var(--color-border); text-align: center; font-size: 0.8125rem; color: var(--color-text-secondary); }
+    @media (max-width: 768px) {
+      .nav-links { display: none; position: absolute; top: 64px; left: 0; right: 0; background: rgba(255,255,255,0.98); backdrop-filter: blur(12px); flex-direction: column; padding: 1.5rem 2rem; gap: 1.25rem; border-bottom: 1px solid var(--color-border); }
+      .nav-links.open { display: flex; }
+      .nav-toggle { display: block; }
+      .guide { padding: 7rem 1.5rem 3rem; }
+      .guide h1 { font-size: 1.75rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">Hall Labs <span>LLC</span></a>
+      <button class="nav-toggle" aria-label="Toggle navigation" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="/#services">Services</a></li>
+        <li><a href="/#riser">Riser</a></li>
+        <li><a href="/#fir">Fir</a></li>
+        <li><a href="/#aligned">I am - Aligned</a></li>
+        <li><a href="/#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="guide">
+    <h1>User Guide</h1>
+    <p class="subtitle">Everything you need to know about I am - Aligned.</p>
+
+    <h2>Getting Started</h2>
+    <p>When you first open I am - Aligned, you'll be guided through a short onboarding where you select your goals — the areas of life you're focused on manifesting (career, relationships, health, abundance, etc.). These goals shape the AI-generated content you receive in every session.</p>
+
+    <h2>The Mindset Check-In</h2>
+    <p>Every check-in follows a four-step ritual:</p>
+    <ol>
+      <li><strong>Vibe Check</strong> — Tap the emoji that matches how you're feeling right now. This is based on the Abraham-Hicks emotional guidance scale, from low vibration to high.</li>
+      <li><strong>Name the Thought</strong> — Optionally describe the thought or trigger affecting your mood. This helps the AI personalize your session. You can skip this step.</li>
+      <li><strong>Affirmation</strong> — Receive a personalized affirmation crafted by AI based on your goals, mood, and context. If spoken word is enabled, it's read aloud.</li>
+      <li><strong>Gratitude &amp; Reflection</strong> — Continue through a gratitude prompt and closing reflection, each personalized to your current state.</li>
+    </ol>
+
+    <h2>App Lock</h2>
+    <p>The core feature. Choose which apps trigger a mindset check-in when you open them. Before the app launches, I am - Aligned intercepts with a quick ritual. After completing it, you choose to proceed to the app or go home.</p>
+
+    <h3>Setting Up App Lock</h3>
+    <ol>
+      <li>Open Settings and tap "Enable Accessibility Service"</li>
+      <li>Grant the accessibility permission in Android Settings</li>
+      <li>Tap "Choose Apps to Lock" and select the apps you want to intercept</li>
+    </ol>
+
+    <div class="tip-box">
+      <p><strong>Tip:</strong> Start with 2-3 apps you find most distracting (social media, news, etc.). You can always add more later. After completing a check-in, the app won't intercept again for 30 minutes — so normal app switching isn't disrupted.</p>
+    </div>
+
+    <h2>Scheduled Check-Ins</h2>
+    <p>Beyond app-lock triggers, you can schedule regular check-ins:</p>
+    <ul>
+      <li><strong>Morning ritual</strong> — Start your day with intention. Configure the time in Settings.</li>
+      <li><strong>Evening ritual</strong> — Reflect on your day. Configure the time in Settings.</li>
+      <li><strong>Throughout the day</strong> — Set an interval (every 2 hours, etc.) for periodic check-ins during waking hours. Quiet hours prevent late-night interruptions.</li>
+    </ul>
+
+    <h2>Manual Check-In</h2>
+    <p>Tap "Check In" on the main screen anytime you want to do a session. You can also use the accessibility shortcut button for instant access from anywhere.</p>
+
+    <h2>Spoken Affirmations</h2>
+    <p>Enable spoken word in Settings to have your affirmations, gratitude prompts, and reflections read aloud by an AI voice. Choose from six voices:</p>
+    <ul>
+      <li><strong>Serena</strong> — Whisper-like, meditative (default)</li>
+      <li><strong>Aria</strong> — Warm, natural</li>
+      <li><strong>Luna</strong> — Soft, British</li>
+      <li><strong>Sage</strong> — Clear, grounded</li>
+      <li><strong>James</strong> — Steady, calm</li>
+      <li><strong>Oliver</strong> — Warm, British</li>
+    </ul>
+    <p>You can also enable "Listen Only" mode, which hides the text and lets you close your eyes while the affirmations are spoken.</p>
+
+    <h2>Ambient Music</h2>
+    <p>Meditative singing bowl music plays during your ritual. Choose from five tracks in Settings, or disable ambient sound entirely.</p>
+
+    <h2>Privacy</h2>
+    <p>I am - Aligned has no user accounts. All your data — goals, moods, preferences — stays on your device. AI requests contain no personally identifiable information. See our full <a href="/aligned/privacy.html">Privacy Policy</a> for details.</p>
+
+    <h2>Need Help?</h2>
+    <p>Contact us at <a href="mailto:info@halllabs.co">info@halllabs.co</a> with any questions or feedback.</p>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 Hall Labs LLC. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

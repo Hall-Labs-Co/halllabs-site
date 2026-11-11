@@ -114,7 +114,7 @@
       <li>Your thought/trigger text, if you chose to enter one</li>
       <li>Your profile answers, if you gave them (see "Information You Provide"), including any first names you entered</li>
     </ul>
-    <p>Requests do not include an email address, account, advertising ID, or device identifier, and are not linked to an identity. Our backend passes the request to our AI provider (Anthropic) to generate your content and does not store the request contents. Our hosting provider may keep standard, short-lived connection logs.</p>
+    <p>Requests do not include an email address, account, advertising ID, or device identifier, and are not linked to an identity. Each request carries a random install identifier, created when you first open the App and reset if you reinstall, which is used only to prevent abuse through rate limiting and is kept in server memory for no more than a day. Our backend passes the request to our AI provider (Anthropic) to generate your content and does not store the request contents. Our hosting provider may keep standard, short-lived connection logs.</p>
 
     <h2>Text-to-Speech</h2>
     <p>If you enable spoken affirmations, the text of your personalized content is sent to a third-party text-to-speech service (Replicate) to generate audio. This text contains only the affirmation/reflection content, which may occasionally include your first name if you shared one. Audio is generated on demand and is not stored by us.</p>

@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Privacy Policy — I am - Aligned by Hall Labs</title>
   <meta name="description" content="Privacy policy for I am - Aligned, the AI-powered mindset check-in app for Android.">
+  <link rel="icon" type="image/png" sizes="32x32" href="/aligned/images/favicon-32.png">
+  <link rel="apple-touch-icon" href="/aligned/images/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -72,7 +74,7 @@
 
   <div class="policy">
     <h1>Privacy Policy</h1>
-    <p class="effective-date">Effective date: November 11, 2026</p>
+    <p class="effective-date">Effective date: November 13, 2026</p>
 
     <div class="summary-box">
       <p>I am - Aligned is designed with privacy at its core. Your profile, mood history, and goals are stored on your device. There are no user accounts. To create your personalized sessions, the details you choose to share are sent to our server and our AI provider, used to generate that session, and not stored on our servers. We never sell your data or use it for advertising.</p>
@@ -88,7 +90,7 @@
       <li>Answer optional setup questions that make up <strong>your profile</strong>: your first name, age range, what you're manifesting and how you describe it, how you want to feel, what gets in your way, who you're becoming, your values, your life situation, relationship status, spiritual preferences, the first names and roles of people who matter to you, what lifts your mood, and when you tend to scroll</li>
       <li>Select personal goals and intentions (e.g., career growth, self-love, abundance)</li>
       <li>Record your current emotional state through mood check-ins</li>
-      <li>Identify thoughts or triggers affecting your mood</li>
+      <li>Identify thoughts or triggers affecting your mood, or choose a topic to focus a session on</li>
       <li>Choose which apps trigger a mindset check-in</li>
       <li>Configure preferences for voice, ambient sound, and check-in schedules</li>
     </ul>
@@ -98,7 +100,9 @@
     <p>All personal data is stored locally on your device:</p>
     <ul>
       <li>Your profile, goals, mood history, and preferences are saved in local device storage (Android DataStore).</li>
-      <li>Session logs (timestamps, mood before/after, session type) are saved in local device storage.</li>
+      <li>Session logs (timestamps, mood before/after, session type, and the thought you wrote) are saved in local device storage.</li>
+      <li>The content of your 20 most recent sessions is saved on your device, so a check-in still works offline and reminders can show your own past affirmations. Audio clips you've listened to are also kept on your device (up to about 10 MB) so offline sessions keep their voice. Older sessions and clips are removed automatically.</li>
+      <li>Topics you've recently focused on are saved to show them first next time.</li>
       <li>No personal data is stored on our servers.</li>
       <li>There are no user accounts — the App operates entirely anonymously.</li>
     </ul>
@@ -111,13 +115,16 @@
       <li>Time of day (morning, afternoon, evening, night)</li>
       <li>Streak count (number of consecutive days)</li>
       <li>The category of the intercepted app, if applicable (e.g., "social_media" — not the specific app name)</li>
-      <li>Your thought/trigger text, if you chose to enter one</li>
+      <li>Your thought/trigger text, if you chose to enter one, and the topic you chose to focus on, if any</li>
       <li>Your profile answers, if you gave them (see "Information You Provide"), including any first names you entered</li>
     </ul>
     <p>Requests do not include an email address, account, advertising ID, or device identifier, and are not linked to an identity. Each request carries a random install identifier, created when you first open the App and reset if you reinstall, which is used only to prevent abuse through rate limiting and is kept in server memory for no more than a day. Our backend passes the request to our AI provider (Anthropic) to generate your content and does not store the request contents. Our hosting provider may keep standard, short-lived connection logs.</p>
 
     <h2>Text-to-Speech</h2>
-    <p>If you enable spoken affirmations, the text of your personalized content is sent to a third-party text-to-speech service (Replicate) to generate audio. This text contains only the affirmation/reflection content, which may occasionally include your first name if you shared one. Audio is generated on demand and is not stored by us.</p>
+    <p>If you enable spoken affirmations, the text of your personalized content is sent to a third-party text-to-speech service (Replicate) to generate audio. This text contains only the affirmation/reflection content, which may occasionally include your first name if you shared one. Audio is generated on demand and is not stored on our servers. The App keeps the audio you've heard on your device, as described in "How Data Is Stored".</p>
+
+    <h2>Notifications</h2>
+    <p>If you turn on reminders, they are scheduled and created on your device. A reminder may show an affirmation, sometimes one from your own past sessions. Depending on your Android notification settings, reminders can appear on your lock screen, where others may see them.</p>
 
     <h2>Accessibility Service</h2>
     <p>The App uses Android's AccessibilityService API to detect when you open apps you've chosen to lock. The accessibility service:</p>

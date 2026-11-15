@@ -87,7 +87,7 @@
     <h2>Information You Provide</h2>
     <p>The App allows you to:</p>
     <ul>
-      <li>Answer optional setup questions that make up <strong>your profile</strong>: your first name, age range, what you're manifesting and how you describe it, how you want to feel, what gets in your way, who you're becoming, your values, your life situation, relationship status, spiritual preferences, the first names and roles of people who matter to you, what lifts your mood, and when you tend to scroll</li>
+      <li>Answer optional setup questions that make up <strong>your profile</strong>: such as your first name and age range, your goals and how you want to feel, your values and life situation, your relationship status, your spiritual or religious preferences, the first names of people who matter to you, and your habits</li>
       <li>Select personal goals and intentions (e.g., career growth, self-love, abundance)</li>
       <li>Record your current emotional state through mood check-ins</li>
       <li>Identify thoughts or triggers affecting your mood, or choose a topic to focus a session on</li>
@@ -99,10 +99,9 @@
     <h2>How Data Is Stored</h2>
     <p>All personal data is stored locally on your device:</p>
     <ul>
-      <li>Your profile, goals, mood history, and preferences are saved in local device storage (Android DataStore).</li>
-      <li>Session logs (timestamps, mood before/after, session type, and the thought you wrote) are saved in local device storage.</li>
-      <li>The content of your 20 most recent sessions is saved on your device, so a check-in still works offline and reminders can show your own past affirmations. Audio clips you've listened to are also kept on your device (up to about 10 MB) so offline sessions keep their voice. Older sessions and clips are removed automatically.</li>
-      <li>Topics you've recently focused on are saved to show them first next time.</li>
+      <li>Your profile, goals, mood history, and preferences.</li>
+      <li>A history of your check-ins, including your mood and any thought you wrote.</li>
+      <li>Your recent sessions and their audio, so the App works offline and reminders can show your own past affirmations. Older ones are removed automatically.</li>
       <li>No personal data is stored on our servers.</li>
       <li>There are no user accounts — the App operates entirely anonymously.</li>
     </ul>
@@ -110,20 +109,16 @@
     <h2>Data Sent to Our Servers</h2>
     <p>When the App generates personalized content, it sends a request to our AI backend containing:</p>
     <ul>
-      <li>Your current mood level (a number from 1-5) and emotion, if selected</li>
-      <li>Your selected goal categories</li>
-      <li>Time of day (morning, afternoon, evening, night)</li>
-      <li>Streak count (number of consecutive days)</li>
-      <li>The category of the intercepted app, if applicable (e.g., "social_media" — not the specific app name)</li>
-      <li>Your thought/trigger text, if you chose to enter one, and the topic you chose to focus on, if any</li>
-      <li>Your profile answers, if you gave them (see "Information You Provide"), including any first names you entered</li>
-      <li>When you didn't write a thought or choose a topic, a few of your recent affirmations, so the new session doesn't repeat them</li>
-      <li>Whether the session will be spoken, and the voice you chose</li>
+      <li>How you're feeling right now</li>
+      <li>Your goals and profile answers, if you gave them, including any first names you entered</li>
+      <li>Any thought you wrote or topic you chose for this session</li>
+      <li>The general category of the app you were opening, if the check-in came from App Lock (never the app's name)</li>
+      <li>Basic context such as the time of day, your streak, your voice preference, and some of your recent session content</li>
     </ul>
-    <p>Requests do not include an email address, account, advertising ID, or device identifier, and are not linked to an identity. Each request carries a random install identifier, created when you first open the App and reset if you reinstall, which is used only to prevent abuse through rate limiting and is kept in server memory for no more than a day. Our backend passes the request to our AI provider (Anthropic) to generate your content and does not store the request contents. Anthropic may keep requests for a limited time under its own policy, for example to detect misuse. Our hosting provider may keep standard, short-lived connection logs.</p>
+    <p>Requests do not include an email address, account, advertising ID, or device identifier, and are not linked to an identity. Each request carries a random install identifier, created when you first open the App and reset if you reinstall, which is used only to prevent abuse through rate limiting and is kept in server memory for no more than a day. Our backend passes the request to our AI provider to generate your content and does not store the request contents. Our AI provider does not use this data to train its models, and may keep requests for a limited time under its own policy, for example to detect misuse. Our hosting provider may keep standard, short-lived connection logs.</p>
 
     <h2>Text-to-Speech</h2>
-    <p>If you enable spoken affirmations, the text of your personalized content is sent to a third-party text-to-speech service (Replicate) to generate audio. This text contains only the affirmation/reflection content, which may occasionally include your first name if you shared one. Audio is generated on demand and is not stored on our servers; Replicate may keep it briefly under its own policy. The App keeps the audio you've heard on your device, as described in "How Data Is Stored".</p>
+    <p>If you enable spoken affirmations, the text of your personalized content is sent to a text-to-speech provider to generate audio. This text contains only the affirmation/reflection content, which may occasionally include your first name if you shared one. Audio is generated on demand and is not stored on our servers; the provider may keep it briefly under its own policy. The App keeps the audio you've heard on your device, as described in "How Data Is Stored".</p>
 
     <h2>Notifications</h2>
     <p>If you turn on reminders, they are scheduled and created on your device. A reminder may show an affirmation, sometimes one from your own past sessions. Depending on your Android notification settings, reminders can appear on your lock screen, where others may see them.</p>
@@ -143,14 +138,15 @@
     <h2>Third-Party Services</h2>
     <p>The App uses the following third-party services:</p>
     <ul>
-      <li><strong>Anthropic</strong> — generates your personalized content from the request described above. Anthropic does not use this data to train its models. <a href="https://www.anthropic.com/legal/privacy">Anthropic privacy policy</a>.</li>
+      <li><strong>AI provider</strong> — writes your personalized content from the request described above. It does not use this data to train its models.</li>
+      <li><strong>Text-to-speech provider</strong> — turns your session text into speech, if you use spoken affirmations. Only the session text is sent.</li>
       <li><strong>Google Analytics for Firebase</strong> — records basic app usage using an app instance identifier: for example, which setup step you reached, where a check-in started, whether it was completed, the voice, music, and theme you use, the mood level (1 to 5) you picked for a check-in or a follow-up, whether you allowed notifications, when App Lock is turned on or off, which paywall you saw and which plan you chose, and what a session cost us to create. Analytics never receives your profile answers, the words you choose to describe a feeling, the topics you pick, or anything you write. You can turn analytics off anytime in Settings → Privacy; in the EU, EEA, UK, and Switzerland it stays off unless you turn it on. <a href="https://firebase.google.com/support/privacy">Firebase privacy information</a>.</li>
       <li><strong>Firebase Crashlytics</strong> — if the App crashes, sends a crash report so we can fix the problem: the technical details of the error, your device model, Android version, App version, and an installation identifier. Crash reports do not include your profile, answers, mood entries, or thoughts. <a href="https://firebase.google.com/support/privacy">Firebase privacy information</a>.</li>
       <li><strong>Firebase Cloud Messaging</strong> — lets us send an occasional message or settings update to the App. Your reminders don't use it; they're created on your device. Firebase processes a device token to deliver messages. No personal data is sent through push notifications. <a href="https://firebase.google.com/support/privacy">Firebase privacy information</a>.</li>
       <li><strong>Firebase Remote Config</strong> — used to manage feature flags. It uses an installation identifier only; no personal data is sent. <a href="https://firebase.google.com/support/privacy">Firebase privacy information</a>.</li>
-      <li><strong>RevenueCat</strong> — used to manage subscriptions. RevenueCat processes anonymous purchase data via Google Play. The App gives RevenueCat its analytics instance identifier, and RevenueCat reports subscription events (such as a trial starting, a renewal, or a cancellation) to Google Analytics, so we can see how many people subscribe. Your name, email, and payment details are never shared with us. <a href="https://www.revenuecat.com/privacy">RevenueCat privacy policy</a>.</li>
-      <li><strong>Replicate</strong> — used for text-to-speech generation. Only affirmation text is sent. <a href="https://replicate.com/privacy">Replicate privacy policy</a>.</li>
+      <li><strong>Subscription provider</strong> — manages subscriptions, processing anonymous purchase data from Google Play. The App shares its analytics instance identifier with it, and it reports subscription events (such as a trial starting, a renewal, or a cancellation) to Google Analytics, so we can see how many people subscribe. Your name, email, and payment details are never shared with us.</li>
     </ul>
+    <p>For a current list of the service providers we use, email <a href="mailto:info@halllabs.co">info@halllabs.co</a>.</p>
     <p>The App does not include any advertising SDKs.</p>
 
     <h2 id="delete">Data Retention and Deletion</h2>
@@ -175,9 +171,9 @@
       <li><strong>Usage analytics</strong>: your consent. In these regions analytics is off unless you turn it on, and you can turn it off anytime in Settings → Privacy.</li>
       <li><strong>Crash reports</strong>: our legitimate interest in keeping the App working (Article 6(1)(f)). Crash reports contain only technical details, never your profile, moods, or thoughts.</li>
       <li><strong>Preventing abuse</strong> (the random install identifier used for rate limiting): our legitimate interest in protecting the service.</li>
-      <li><strong>Subscriptions</strong>: to perform our contract with you, through Google Play and RevenueCat.</li>
+      <li><strong>Subscriptions</strong>: to perform our contract with you, through Google Play and our subscription provider.</li>
     </ul>
-    <p><strong>International transfers.</strong> Our servers and service providers (Anthropic, Google, Replicate, RevenueCat, and our hosting provider) are located in the United States. Transfers rely on the EU-U.S. Data Privacy Framework where the provider is certified, or on the European Commission's Standard Contractual Clauses (and the UK and Swiss equivalents).</p>
+    <p><strong>International transfers.</strong> Our servers and service providers are located in the United States. Transfers rely on the EU-U.S. Data Privacy Framework where the provider is certified, or on the European Commission's Standard Contractual Clauses (and the UK and Swiss equivalents).</p>
     <p><strong>How long data is kept.</strong> The content of your requests is not stored on our servers. The install identifier is kept in server memory for no more than a day. Usage analytics is kept for no more than 14 months, and crash reports for about 90 days. Everything on your device stays until you delete it or uninstall the App.</p>
     <p><strong>Your rights.</strong> You have the right to access, correct, delete, restrict, or object to the processing of your personal data, to data portability, and to withdraw consent at any time without affecting earlier processing. Most of your data exists only on your device, where you can view and edit it in the App and delete it by uninstalling. For analytics or crash data, or any other request, email <a href="mailto:info@halllabs.co">info@halllabs.co</a>. You also have the right to lodge a complaint with your local data protection authority.</p>
 
